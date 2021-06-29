@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
