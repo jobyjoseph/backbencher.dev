@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: `My Gatsby Blog`,
+    description: `This is my coding blog.`,
+  },
   plugins: [
     `gatsby-plugin-mdx`,
     {
