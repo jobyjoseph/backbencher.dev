@@ -1,0 +1,24 @@
+---
+title: JS Daily 8 - Using apply() With Arrow Functions
+date: 2020-11-28
+slug: js-daily-8-apply-with-arrow-function
+---
+
+import Divider from "../../../../src/components/divider";
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const f = () => {
+  console.log(this.a);
+}
+f.apply({ a: 10 });
+```
+
+<Divider />
+
+Output is `undefined`.
+
+In case of arrow function, `this` is not bound to the function. This rule is applicable even when used with `call()` or `apply()`.
+
+In our example, `f()` is defined in the global scope(`window`). Therefore in line 2, when `this.a` is printed, it prints the value of `window.a`. Since, there is no global variable `a`, `undefined` is printed.

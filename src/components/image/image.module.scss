@@ -1,0 +1,23 @@
+.wrapper {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px;
+  background: #fff;
+  box-sizing: border-box;
+  margin: 2em auto;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .caption {
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 10px;
+    padding-bottom: 0;
+  }
+}

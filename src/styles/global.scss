@@ -1,0 +1,302 @@
+html,
+body {
+  font-family: "Lora", serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  background: #eeeeee;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*** Headers ***/
+h1,
+h2 {
+  margin: 0;
+}
+h1 {
+  font-size: 300%;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 230%;
+  margin: 1em 0 0.75em;
+  line-height: 1.02;
+
+  code {
+    font-size: 30px;
+  }
+}
+h3 {
+  font-size: 180%;
+  margin: 1em 0 0.5em;
+}
+h4 {
+  font-size: 140%;
+  margin: 1.5em 0 0.5em;
+}
+
+h5 {
+  font-size: 110%;
+  margin: 1em 0 0;
+}
+
+h6 {
+  font-size: 100%;
+  margin: 2em 0 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+
+  code {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+/*** Headers ***/
+
+/* Common elements */
+
+blockquote {
+  margin: 0;
+  margin-top: 30px;
+  padding-left: 10px;
+  border-left: 3px solid #fe2d74;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  tr {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+  }
+
+  th,
+  td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+  }
+}
+/* End common elements */
+
+/*** Container ***/
+.container {
+  max-width: 840px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.sidebar {
+  flex: 0 0 300px;
+  margin-right: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 16px;
+    }
+  }
+}
+
+.contentArea {
+  flex: 1 1 auto;
+  padding: 20px;
+  background: #fff;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: auto;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px;
+    box-shadow: 0 0 3px #aaa;
+  }
+}
+
+.contentBox {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 3px #aaa;
+  box-sizing: border-box;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px;
+  }
+
+  .topBanner {
+    margin-bottom: 10px;
+  }
+
+  .homeGrid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    .homeBox {
+      flex: 0 0 100%;
+      font-family: "Source Sans Pro", sans-serif;
+
+      img {
+        box-shadow: 0 1px 1px #999;
+      }
+
+      @media screen and (min-width: 768px) {
+        flex: 0 0 33.3333%;
+      }
+
+      h5 {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+/*** Links ***/
+a {
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+/*** 2 col grid ***/
+.grid-2 {
+  display: flex;
+
+  .col-1 {
+    width: 250px;
+    box-sizing: border-box;
+    border-right: 1px solid #f4f4f4;
+    padding-right: 15px;
+  }
+
+  .col-2 {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 30px;
+  }
+}
+
+.sidebarMenu {
+  h3 {
+    margin: 0;
+  }
+
+  ul {
+    margin: 0 0 30px;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin: 8px 0;
+
+      a {
+        color: #444;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+/*** Prismjs ***/
+pre[class*="language-"] {
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  font-weight: 300;
+  font-size: 0.9em;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-shadow: none;
+}
+
+:not(pre) > code[class*="language-"] {
+  border: none;
+  font-size: 0.9em;
+  color: #000;
+  box-shadow: none;
+  border-radius: 2px;
+  font-weight: 300;
+  background: #f5f2f0;
+  background: #d7cbc24d;
+  padding: 3px 5px;
+}
+
+.token {
+  &.operator {
+    background: none;
+  }
+}
+
+.line-numbers .line-numbers-rows {
+  padding: 1em 0.1em 1em 0.6em;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #f1e2e7;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f1e2e7;
+}
+
+/*** Prismjs ***/
+
+/** Adsense **/
+
+.inArticleAdContainer {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}

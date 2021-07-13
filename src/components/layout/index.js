@@ -8,18 +8,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import Header from "./header/header";
-import Footer from "./footer/footer";
+import Header from "../header";
+import Footer from "../footer";
+import SEO from "../seo";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   return (
     <>
+      <SEO title={title} />
       <Helmet>
         <link rel="stylesheet" href="https://use.typekit.net/sut3opv.css" />
       </Helmet>
       <Header />
       <div>
-        <main>{children}</main>
+        <main>
+          <div className="container">
+            <div className="contentArea">{children}</div>
+          </div>
+        </main>
       </div>
       <Footer />
     </>
