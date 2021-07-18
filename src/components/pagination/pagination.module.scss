@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.link {
+  width: 30px;
+  height: 30px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &.currentPage {
+    background-color: #7736c1;
+    color: #fff;
+  }
+}

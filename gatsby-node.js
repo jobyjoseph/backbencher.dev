@@ -29,7 +29,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   // Create articles listing pages
-  const postsPerPage = 1;
+  const postsPerPage = 30;
   const numPages = Math.ceil(articles.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     actions.createPage({

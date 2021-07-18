@@ -1,8 +1,37 @@
 .item {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+
+  .linkContainer {
+    flex: 1 1 auto;
+    a {
+      font-size: 26px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      margin-right: 30px;
+    }
+  }
+
+  .tagContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .date {
-  color: #999;
-  font-size: 12px;
+  color: #666;
+  font-size: 14px;
+  white-space: nowrap;
 }
