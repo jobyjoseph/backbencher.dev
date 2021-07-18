@@ -5406,6 +5406,14 @@
     "lodash" "^4.17.21"
     "micromatch" "^4.0.2"
 
+"gatsby-plugin-google-gtag@^3.9.0":
+  "integrity" "sha512-k4NlT4rWnmsfz6xZ2RAqA3j7CwD/PvSahrf+fyi7c/E7TmUOLCRuWy3UyluOGBc8Od0vESU6eYIyHHeFZJco3w=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.9.0.tgz"
+  "version" "3.9.0"
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    "minimatch" "^3.0.4"
+
 "gatsby-plugin-mdx@^2.8.0":
   "integrity" "sha512-N404gnmS+U70HtOsU5iL94GcdDVia2Ir/InSx5PlZCJd8neCbU4ROA2IKx3yrLRd7aryNjA9ZnP4LbwqXeUneg=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-mdx/-/gatsby-plugin-mdx-2.8.0.tgz"
