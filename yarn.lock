@@ -1636,7 +1636,7 @@
     "@types/node" "*"
     "form-data" "^3.0.0"
 
-"@types/node@*", "@types/node@>=12":
+"@types/node@*", "@types/node@^15.0.1", "@types/node@>=12":
   "integrity" "sha512-se3yX7UHv5Bscf8f1ERKvQOD6sTyycH3hdaoozvaLxgUiY5lIGEeH37AD0G0Qi9kPqihPn0HOfd2yaIEN9VwEg=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-15.12.5.tgz"
   "version" "15.12.5"
@@ -1701,6 +1701,13 @@
   "version" "2.0.4"
   dependencies:
     "@types/glob" "*"
+    "@types/node" "*"
+
+"@types/sax@^1.2.1":
+  "integrity" "sha512-+QSw6Tqvs/KQpZX8DvIl3hZSjNFLW/OqE5nlyHXtTwODaJvioN2rOWpBNEWZp2HZUFhOh+VohmJku/WxEXU2XA=="
+  "resolved" "https://registry.npmjs.org/@types/sax/-/sax-1.2.3.tgz"
+  "version" "1.2.3"
+  dependencies:
     "@types/node" "*"
 
 "@types/scheduler@*":
@@ -2192,6 +2199,11 @@
   "integrity" "sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA=="
   "resolved" "https://registry.npmjs.org/arg/-/arg-4.1.3.tgz"
   "version" "4.1.3"
+
+"arg@^5.0.0":
+  "integrity" "sha512-4P8Zm2H+BRS+c/xX1LrHw0qKpEhdlZjLCgWy+d78T9vqa2Z2SiD2wMrYuWIAFy5IZUD7nnNXroRttz+0RzlrzQ=="
+  "resolved" "https://registry.npmjs.org/arg/-/arg-5.0.0.tgz"
+  "version" "5.0.0"
 
 "argparse@^1.0.7":
   "integrity" "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="
@@ -5495,6 +5507,16 @@
     "@babel/runtime" "^7.14.0"
     "resolve-url-loader" "^3.1.2"
     "sass-loader" "^10.1.1"
+
+"gatsby-plugin-sitemap@^4.5.0":
+  "integrity" "sha512-wJXqLvXJBtLsIMM8OrWH21XoLbXSY1m6ZFcF5I6TnPbutCB57Y8tExu3xUzf+XQvc4dtNoXQTXk4L/ktUuUkeA=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-4.5.0.tgz"
+  "version" "4.5.0"
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    "common-tags" "^1.8.0"
+    "minimatch" "^3.0.4"
+    "sitemap" "^7.0.0"
 
 "gatsby-plugin-typescript@^3.8.0":
   "integrity" "sha512-FmDA6DLcotzLHbRpxTJpamEcTh3xRdMNcD0i0RBVcsv3VCnsQHiQQ/1CEtxs4erk7SgvWd+q+ywQQjTkVugXyA=="
@@ -10690,6 +10712,11 @@
   dependencies:
     "chokidar" ">=3.0.0 <4.0.0"
 
+"sax@^1.2.4":
+  "integrity" "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw=="
+  "resolved" "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
+  "version" "1.2.4"
+
 "scheduler@^0.20.2":
   "integrity" "sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ=="
   "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.20.2.tgz"
@@ -10971,6 +10998,16 @@
   "integrity" "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="
   "resolved" "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"
   "version" "1.0.5"
+
+"sitemap@^7.0.0":
+  "integrity" "sha512-Ud0jrRQO2k7fEtPAM+cQkBKoMvxQyPKNXKDLn8tRVHxRCsdDQ2JZvw+aZ5IRYYQVAV9iGxEar6boTwZzev+x3g=="
+  "resolved" "https://registry.npmjs.org/sitemap/-/sitemap-7.0.0.tgz"
+  "version" "7.0.0"
+  dependencies:
+    "@types/node" "^15.0.1"
+    "@types/sax" "^1.2.1"
+    "arg" "^5.0.0"
+    "sax" "^1.2.4"
 
 "slash@^3.0.0":
   "integrity" "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="
