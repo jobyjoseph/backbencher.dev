@@ -15,7 +15,7 @@ function Pagination({ currentPage, links }) {
         } else {
           return (
             <Link to={ele.path} className={styles.link}>
-              <a>{ele.text}</a>
+              {ele.text}
             </Link>
           );
         }
