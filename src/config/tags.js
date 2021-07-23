@@ -31,4 +31,8 @@ module.exports = {
     title: "Next.js",
     color: "#ef5350",
   },
+  nodejs: {
+    title: "Node.js",
+    color: "#4CAF50",
+  },
 };
