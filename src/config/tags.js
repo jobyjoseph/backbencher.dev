@@ -35,4 +35,8 @@ module.exports = {
     title: "Node.js",
     color: "#4CAF50",
   },
+  reactQuery: {
+    title: "React Query",
+    color: "#6520FF",
+  },
 };
