@@ -16,9 +16,6 @@ const Layout = ({ children, title }) => {
   return (
     <>
       <SEO title={title} />
-      <Helmet>
-        <link rel="stylesheet" href="https://use.typekit.net/sut3opv.css" />
-      </Helmet>
       <Header />
       <div>
         <main>
