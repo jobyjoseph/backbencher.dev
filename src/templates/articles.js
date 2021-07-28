@@ -35,7 +35,9 @@ const Articles = ({ data, pageContext }) => {
     });
   }
   return (
-    <Layout title="Articles">
+    <Layout
+      title={currentPage === 1 ? `Articles` : `Articles | Page ${currentPage}`}
+    >
       {articles.map((article, index) => {
         return (
           <div className={styles.item} key={index}>

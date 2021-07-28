@@ -1,42 +1,46 @@
 module.exports = {
   typescript: {
     title: "TypeScript",
-    color: "#ec407a",
+    color: "#C62828",
   },
   javascript: {
     title: "JavaScript",
-    color: "#039be5",
+    color: "#AD1457",
   },
   deno: {
     title: "Deno",
-    color: "#ef6c00",
+    color: "#6A1B9A",
   },
   react: {
     title: "React",
-    color: "#43a047",
+    color: "#4527A0",
   },
   mongodb: {
     title: "MongoDB",
-    color: "#26a69a",
+    color: "#283593",
   },
   os: {
     title: "OS",
-    color: "#2196f3",
+    color: "#1565C0",
   },
   algorithms: {
     title: "Algorithms",
-    color: "#8d6e63",
+    color: "#00695C",
   },
   nextjs: {
     title: "Next.js",
-    color: "#ef5350",
+    color: "#1B5E20",
   },
   nodejs: {
     title: "Node.js",
-    color: "#4CAF50",
+    color: "#827717",
   },
   reactQuery: {
     title: "React Query",
-    color: "#6520FF",
+    color: "#BF360C",
+  },
+  gatsby: {
+    title: "Gatsby",
+    color: "#3E2723",
   },
 };
