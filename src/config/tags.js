@@ -37,10 +37,10 @@ module.exports = {
   },
   reactQuery: {
     title: "React Query",
-    color: "#f04a17",
+    color: "#BF360C",
   },
   gatsby: {
     title: "Gatsby",
-    color: "#ad776d",
+    color: "#3E2723",
   },
 };
