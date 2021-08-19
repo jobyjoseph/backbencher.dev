@@ -43,4 +43,8 @@ module.exports = {
     title: "Gatsby",
     color: "#3E2723",
   },
+  materialUI: {
+    title: "Material UI",
+    color: "#880E4F",
+  },
 };
