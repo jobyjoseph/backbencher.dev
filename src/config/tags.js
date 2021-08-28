@@ -47,4 +47,8 @@ module.exports = {
     title: "Material UI",
     color: "#880E4F",
   },
+  aws: {
+    title: "AWS",
+    color: "#00695C",
+  },
 };

@@ -12,10 +12,10 @@ import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, description }) => {
   return (
     <>
-      <SEO title={title} />
+      <SEO title={title} description={description} />
       <Header />
       <div>
         <main>

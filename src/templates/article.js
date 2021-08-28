@@ -9,6 +9,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "D MMM, YYYY")
+        description
       }
       body
     }
@@ -16,7 +17,10 @@ export const query = graphql`
 `;
 
 const PostTemplate = ({ data: { mdx: article } }) => (
-  <Layout title={article.frontmatter.title}>
+  <Layout
+    title={article.frontmatter.title}
+    description={article.frontmatter.description}
+  >
     <h1>{article.frontmatter.title}</h1>
     <div>
       <small>Published on {article.frontmatter.date}</small>
