@@ -27,7 +27,7 @@ export const query = graphql`
 const Articles = ({ data, pageContext }) => {
   const articles = data.allMdx.nodes;
   const { numPages, currentPage } = pageContext;
-  const linkArray = new Array();
+  const linkArray = [];
   for (let i = 0; i < numPages; i++) {
     linkArray.push({
       path: i === 0 ? "/articles" : `/articles/${i + 1}`,
