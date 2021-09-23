@@ -51,4 +51,8 @@ module.exports = {
     title: "AWS",
     color: "#00695C",
   },
+  git: {
+    title: "Git",
+    color: "#283593",
+  },
 };
