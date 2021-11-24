@@ -29,6 +29,13 @@ const Layout = ({ children, title, description }) => {
                 format="auto"
                 responsive="true"
               />
+              <GoogleAd
+                className="adsbygoogle"
+                style={{ display: "block" }}
+                slot="4442358683"
+                format="auto"
+                responsive="true"
+              />
             </div>
           </div>
         </main>
