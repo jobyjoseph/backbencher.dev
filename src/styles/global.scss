@@ -102,38 +102,27 @@ table {
 
 /*** Container ***/
 .container {
-  max-width: 840px;
+  max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: 768px) {
     padding: 0 15px;
+    flex-direction: row;
   }
 }
 
 .sidebar {
-  flex: 0 0 300px;
-  margin-right: 20px;
-  font-family: "Source Sans Pro", sans-serif;
-  display: none;
+  flex: 1 1 100%;
+  padding: 20px;
 
   @media screen and (min-width: 768px) {
-    display: block;
-  }
-
-  h4 {
-    margin-bottom: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
+    margin-left: 60px;
+    flex: 0 0 300px;
     padding: 0;
-
-    li {
-      font-size: 16px;
-    }
   }
 }
 
