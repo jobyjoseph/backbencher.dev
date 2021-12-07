@@ -9,5 +9,5 @@ const HeadComponents = [
 ];
 
 exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
-  setHeadComponents(HeadComponents);
+  //setHeadComponents(HeadComponents);
 };

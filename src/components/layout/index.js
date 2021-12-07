@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
-import GoogleAd from "../googlead";
 
 const Layout = ({ children, title, description }) => {
   return (
@@ -21,22 +20,6 @@ const Layout = ({ children, title, description }) => {
         <main>
           <div className="container">
             <div className="contentArea">{children}</div>
-            <div className="sidebar">
-              <GoogleAd
-                className="adsbygoogle"
-                style={{ display: "block" }}
-                slot="5217850665"
-                format="auto"
-                responsive="true"
-              />
-              <GoogleAd
-                className="adsbygoogle"
-                style={{ display: "block" }}
-                slot="4442358683"
-                format="auto"
-                responsive="true"
-              />
-            </div>
           </div>
         </main>
       </div>
