@@ -1,12 +1,12 @@
 ---
-title: "Compiling TypeScript"
+title: "TypeScript Setup & Compilation"
 date: 2022-02-02
-slug: compiling-typescript
-description: "The goal of this article is to learn how to compile a TypeScript program. We use tsc compiler command to perform the compilation. We also learn how to set the level of JavaScript that comes out of TypeScript compiler."
+slug: typescript-setup-compilation
+description: "The goal of this article is to learn how to setup and compile a TypeScript program. We use tsc compiler command to perform the compilation. We also learn how to set the level of JavaScript that comes out of TypeScript compiler."
 tags: ["typescript"]
 ---
 
-The goal of this article is to learn how to **compile** a TypeScript program. We use `tsc` compiler command to perform the compilation. We also learn how to set the **level of JavaScript** that comes out of TypeScript compiler.
+The goal of this article is to learn how to **setup** and **compile** a TypeScript program. We use `tsc` compiler command to perform the compilation. We also learn how to set the **level of JavaScript** that comes out of TypeScript compiler.
 
 ## Project Setup
 
@@ -32,12 +32,12 @@ We need only one dependency for this project. That is `typescript`. So, here is 
 }
 ```
 
-The `dev` command will run the TypeScript compiler(`tsc`) along with some options. `--watch` flag watches for any file change and does compilation again. `--preserveWatchOutput` is to retain the console outputs even after re-compilation.
-Now that is it about `package.json` file. Let us understand the second file, `tsconfig.json`.
+The `dev` command will run the TypeScript compiler(`tsc`) along with some options. `--watch` flag watches for any file change and does compilation again if there is any source file change. `--preserveWatchOutput` is to retain the console outputs even after re-compilation.
+Now, that is it about `package.json` file. Let us understand the second file, `tsconfig.json`.
 
 #### tsconfig.json
 
-When we run `tsc` command, if a `tsconfig.json` file is there TypeScript will parse that file for options. The settings in the file is applied during TypeScript compilation. Here is our `tsconfig.json` file.
+When we run `tsc` command, if a `tsconfig.json` file is there, TypeScript will parse that file for options. The settings in the file is applied during TypeScript compilation. Here is our `tsconfig.json` file.
 
 ```json
 {
@@ -53,7 +53,7 @@ We are passing 2 compiler options. `outDir` is for output directory. Here, we ar
 
 If we want the output JavaScript to support ES3 browsers(Eg: IE6), then we need to set the value of `target` to `ES3`. Note that, more backward compatibility means the generated JavaScript files will contain more code. So, we do not have to set this option to older versions unnecessarily.
 
-By mentioning `"src"` in `include` array, we specify that all our TypeScript files will be in `src` folder.
+By mentioning `"src"` in `include` array, we specify that all our TypeScript files will be in `src` folder. `--watch` flag will be watching for any file changes under the `src` folder.
 
 > We can pass all compiler options as command line flags. But as the project gets bigger, having a separate config file is easier to manage and version.
 
@@ -119,7 +119,7 @@ function add(a, b) {
 
 That will not happen. TypeScript is a **static type checker**. It does not do any code logic modification. Example, how can TypeScript decide what to do if an error occurs? Does it need to return a string with `"error"` or throw some exception. All these confusions will occur. So TypeScript will do only **build time type check with the annotations given to it**.
 
-For example, in the above TypeScript code if we called the function with a string value like below, TypeScript can identify the error at build time itself.
+For example, in the above TypeScript code if we call the function with a string value like below, TypeScript can identify the error at build time itself.
 
 ```typescript
 function add(a: number, b: number): number {
