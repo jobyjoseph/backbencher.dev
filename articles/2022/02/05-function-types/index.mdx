@@ -2,7 +2,7 @@
 title: "Define Function Argument and Return Types in TypeScript"
 date: 2022-02-05
 slug: typescript-function-argument-return-types
-description: ""
+description: "TypeScript can set types for function arguments and return types. Typed functions help us to catch errors early and show the section of code that is causing the error."
 tags: ["typescript"]
 ---
 
@@ -34,4 +34,20 @@ In the above typed function, we try to invoke the function with invalid argument
 
 ```
 error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+```
+
+We can catch errors early and at the place of function definition, if we properly set the argument and return types.
+
+### Forcing a return value
+
+When we define a return type for a function, TypeScript makes sure that a value of proper type is **always returned**.
+
+```typescript
+function foo(): number {}
+```
+
+Above function `foo()` should return a `number` value. But it is clear that `foo()` is not returning any value. Therefore, TypeScript will throw below error.
+
+```
+error TS2355: A function whose declared type is neither 'void' nor 'any' must return a value.
 ```
