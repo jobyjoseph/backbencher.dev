@@ -1,0 +1,14 @@
+TC39
+====
+
+https://www.youtube.com/watch?v=slA06pbTRi4
+
+https://tc39.es/#proposals
+
+https://2ality.com/2015/11/tc39-process.html#stage-4%3A-finished
+
+Books to read:
+
+https://www.youtube.com/watch?v=RfOYWeu5pGk
+
+https://www.youtube.com/watch?v=FWmuxvOgh6Q
