@@ -9,6 +9,10 @@ https://2ality.com/2015/11/tc39-process.html#stage-4%3A-finished
 
 Books to read:
 
+https://www.youtube.com/watch?v=G0u419NcmOE
+
 https://www.youtube.com/watch?v=RfOYWeu5pGk
 
 https://www.youtube.com/watch?v=FWmuxvOgh6Q
+
+https://github.com/littledan
