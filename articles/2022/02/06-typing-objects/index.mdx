@@ -89,3 +89,25 @@ foo({
 TypeScript clearly points out the error. Let me paste the exact error message below. See for yourself how descriptive it is.
 
 `error TS2345: Argument of type '{ name: string; age: number; year: number; }' is not assignable to parameter of type '{ name: string; age: number; }'. Object literal may only specify known properties, and 'year' does not exist in type '{ name: string; age: number; }'.`
+
+## Optional Properties in Objects
+
+In an object, few properties can be **optional**. Consider the following object:
+
+```javascript
+{
+  name: "Joby",
+  status: "married",
+  spouse: "Ninu"
+}
+```
+
+In the above object, `spouse` key is not required if `status` is `single`. While defining type for such fields, we can mark a property as optional by `?` operator. Here is the type definition for our object.
+
+```typescript
+{
+  name: string
+  status: string
+  spouse?: string
+}
+```
