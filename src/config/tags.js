@@ -55,4 +55,8 @@ module.exports = {
     title: "Git",
     color: "#283593",
   },
+  web: {
+    title: "Web",
+    color: "#880E4F",
+  },
 };
