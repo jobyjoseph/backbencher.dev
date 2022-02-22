@@ -135,4 +135,6 @@ The contract should compile successfully.
 
 <Image src={imgHardhatCompile} alt="Hardhat compile" />
 
+Hardhat stores the compiled contract under `artifacts` folder which was dynamically created during compilation. If we open `artifacts/contracts/HelloWorld.sol/HelloWorld.json`, we can see all the information about our contract and also the bytecode which is required for Ethereum Virtual Machine.
+
 After compilation, the next step is to deploy the contract to a test network. We will cover that part in the next article.
