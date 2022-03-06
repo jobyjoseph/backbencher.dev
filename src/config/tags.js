@@ -59,4 +59,8 @@ module.exports = {
     title: "Web",
     color: "#880E4F",
   },
+  webpack: {
+    title: "Webpack",
+    color: "#BF360C",
+  },
 };
