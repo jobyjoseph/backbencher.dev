@@ -18,3 +18,5 @@ https://github.com/tc39/proposals/blob/main/finished-proposals.md - Finished pro
 https://www.coursera.org/learn/mastering-web3-waves
 
 https://frontendmasters.com/courses/web3-smart-contracts/create-a-deployment-script/
+
+How To bundle all the shared JavaScript across pages using optimization.splitChunks?
