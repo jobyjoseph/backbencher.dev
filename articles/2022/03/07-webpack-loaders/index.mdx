@@ -1,0 +1,50 @@
+---
+title: "Webpack Loaders"
+date: 2022-03-09
+slug: webpack-loaders
+description: "Webpack can add only JavaScript and JSON files to dependency graph. In order to add other file types, loaders are required."
+tags: ["webpack"]
+---
+
+import Image from "../../../../src/components/image";
+import imgWebpackError from "./images/webpack-error.png";
+
+Webpack creates a dependency graph about all the files referenced in our application. It starts with the entry file and go in depth with the help of `import` or `require` statments in the code.
+
+So when webpack sees, `import React from "react"`, it adds the React library to the bundle. Out of the box, Webpack can only understand and include **JavaScript** and **JSON** files.
+
+## CSS Import
+
+What if there is a CSS file import like, `import "./styles.css"`? Let us try it in our code. Say, we have an `index.js` file that imports `style.css`.
+
+Here is our `index.js` file:
+
+```javascript
+import "./style.css";
+
+console.log("I am good");
+```
+
+And, here is our `style.css` file:
+
+```css
+h1 {
+  color: red;
+}
+```
+
+Our expectation is that, Webpack will bundle both the files and creates a `main.js` bundle under `./dist` folder. We do not require an explicit `webpack.config.js` file now. Let us try with the default webpack configuration.
+
+When we try to build the source files, we see below error message in console.
+
+<Image src={imgWebpackError} alt="Webpack file type error" />
+
+Webpack tried to include `style.css`. But it is not able to understand what is written there. It can understand only **JavaScript** and **JSON**. That is why webpack clearly says in the error message that:
+
+```
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file.
+```
+
+**Loaders** allow webpack to process other types of files and convert them into **valid modules** that can be consumed by your application and added to the dependency graph.
+
+As per the definition of loaders, in order to import a CSS file, we need to use a `css-loader`.

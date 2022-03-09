@@ -20,3 +20,5 @@ https://www.coursera.org/learn/mastering-web3-waves
 https://frontendmasters.com/courses/web3-smart-contracts/create-a-deployment-script/
 
 How To bundle all the shared JavaScript across pages using optimization.splitChunks?
+
+How node resolves package dependency? https://nodejs.org/api/modules.html#all-together. Actually, we need the packages only in root node_module :)
