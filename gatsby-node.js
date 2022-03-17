@@ -4,7 +4,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMdx {
         nodes {
           frontmatter {
+            title
             slug
+            tags
           }
         }
       }
@@ -17,6 +19,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const articles = result.data.allMdx.nodes;
 
+  // Group articles by tag
+  const tags = {};
+  articles.forEach((article) => {
+    const tag = article.frontmatter.tags[0] || "web";
+    if (tags[tag]) {
+      tags[tag].push(article);
+    } else {
+      tags[tag] = [];
+      tags[tag].push(article);
+    }
+  });
+
   // Create article pages
   articles.forEach((article) => {
     actions.createPage({
@@ -24,6 +38,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: require.resolve("./src/templates/article.js"),
       context: {
         slug: article.frontmatter.slug,
+        tags,
       },
     });
   });
