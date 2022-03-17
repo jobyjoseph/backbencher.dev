@@ -24,3 +24,7 @@ How To bundle all the shared JavaScript across pages using optimization.splitChu
 How node resolves package dependency? https://nodejs.org/api/modules.html#all-together. Actually, we need the packages only in root node_module :)
 
 https://github.com/devkodeio/the-dom-challenge
+
+https://frontendmasters.com/courses/practical-algorithms/
+
+https://javascript.info/recursion
