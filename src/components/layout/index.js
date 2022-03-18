@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
-import JobAd from "../jobad";
 
 const Layout = ({ children, title, description }) => {
   return (
@@ -20,10 +19,7 @@ const Layout = ({ children, title, description }) => {
       <div>
         <main>
           <div className="container">
-            <div className="contentArea">
-              <JobAd />
-              {children}
-            </div>
+            <div className="contentArea">{children}</div>
           </div>
         </main>
       </div>
