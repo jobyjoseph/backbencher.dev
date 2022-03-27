@@ -63,4 +63,8 @@ module.exports = {
     title: "Webpack",
     color: "#BF360C",
   },
+  learning: {
+    title: "Learning",
+    color: "#880E4F",
+  },
 };

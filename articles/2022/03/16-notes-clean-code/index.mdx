@@ -1,0 +1,31 @@
+---
+title: "Notes: Clean Code By Robert C Martin"
+date: 2022-03-27
+slug: notes-clean-code-robert-c-martin
+description: "Notes taken while reading Clean Code by Robert C Martin"
+tags: ["learning"]
+---
+
+Learning to write clean code is hard work. We need to practice it heavily to achieve that skill.
+
+## 1. Clean Code
+
+We spend most of the time reading code before writing it. So, it is important to write clean code.
+
+## 2. Meaningful Names
+
+Take time to name variables and functions. If we find a better name at later point of time, make the code better by replacing it.
+
+The variable name should reveal the **intent**. Eg: `elapsedTimeInDays`.
+
+Avoid chances of **disinformation** while naming. A variable with name `accountList` gives a perception to developer that it might be a list. If its not, do not provide that name. Simply put `accounts` or `accountGroup`.
+
+Every now and then we use the **search** in files option in our IDE. So having search friendly approach in using variable names and constants will be great. Rather than using `12` as rate of interest, use a constant `RATE_OF_INTEREST` with value `12`. Searching for `RATE_OF_INTEREST` gives the intended result faster than searching for `12`.
+
+**Classes** and **objects** should take the name of a **noun**. Eg: `user`, `account`
+
+**Method** names should take the name of a **verb**. Eg: `save`, `calculateInterest`
+
+## 3. Functions
+
+Functions should be **small**. Try to keep it below 20 lines.

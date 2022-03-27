@@ -30,3 +30,7 @@ https://frontendmasters.com/courses/practical-algorithms/
 https://javascript.info/recursion
 
 https://jsbin.com/bemoneziju/edit?js,console - Trying leetcode array
+
+https://frontendmasters.com/courses/complete-react-v6/who-is-this-course-for/
+
+Extreme programming - https://www.amazon.in/Extreme-Programming-Explained-Embrace-Change/dp/0321278658
