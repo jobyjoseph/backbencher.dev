@@ -2,11 +2,15 @@
 title: "Array Data Structure"
 date: 2022-03-23
 slug: array-data-structure
-description: ""
+description: "An **array** is a collection of similar items stored in **contigous memory locations**. We discuss here about arrays in the context of JavaScript language."
 tags: ["algorithms"]
 ---
 
-An **array** is a collection of similar items stored in **contigous memory locations**.
+An **array** is a collection of similar items stored in **contigous memory locations**. We discuss here about arrays in the context of JavaScript language.
+
+```toc
+# This code block gets replaced with the TOC
+```
 
 ## Create an Array
 
@@ -22,4 +26,16 @@ Each element in an array has an index starting from **0**. An array element can 
 
 ```javascript
 console.log(arr[4]); // 5th element is in 4th index
+```
+
+## Read All Elements
+
+We can use a `for` loop to iterate through an array.
+
+```javascript
+const arr = ["Apple", "Orange", "Banana"];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
 ```
