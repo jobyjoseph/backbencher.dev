@@ -71,4 +71,8 @@ module.exports = {
     title: "HTML",
     color: "#283593",
   },
+  css: {
+    title: "TypeScript",
+    color: "#C62828",
+  },
 };
