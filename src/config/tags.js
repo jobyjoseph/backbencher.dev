@@ -67,4 +67,8 @@ module.exports = {
     title: "Learning",
     color: "#880E4F",
   },
+  html: {
+    title: "HTML",
+    color: "#283593",
+  },
 };
