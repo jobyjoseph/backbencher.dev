@@ -1,0 +1,31 @@
+---
+title: "useEffect() React Hook"
+date: 2022-04-10
+slug: useeffect-react-hook
+description: "useEffect() hook brings different life-cycle methods to functional component."
+tags: ["react"]
+---
+
+`useEffect()` hook brings different life-cycle methods to a **functional component**. This hook performs side-effects in functional component. If you did not get any idea, do not worry. You can understand in detail by reading below sections.
+
+## Import useEffect
+
+`useEffect()` hook comes as part of `react` package from React **v16.8**. In order to use `useEffect()` in our code, first step is to import it from React package.
+
+```javascript
+import { useEffect } from "react";
+```
+
+## useEffect() Arguments
+
+`useEffect()` hook accepts two arguments, a **callback function** and an **array**.
+
+```javascript
+useEffect(() => {
+  console.log("Callback function");
+}, []);
+```
+
+The callback function passed to `useEffect()` is invoked as a side-effect on change of any state variables.
+
+What all state variables we need to track, that information is passed to the second array argument.

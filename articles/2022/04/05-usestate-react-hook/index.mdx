@@ -1,5 +1,5 @@
 ---
-title: "useState React Hook"
+title: "useState() React Hook"
 date: 2022-04-07
 slug: usestate-react-hook
 description: "useState() hook brings state to a functional component. Since it is a hook, it can only be used inside a functional component."
@@ -7,6 +7,7 @@ tags: ["react"]
 ---
 
 import Image from "../../../../src/components/image";
+import Olink from "../../../../src/components/olink";
 import imgUseStateResponse from "./images/usestate-response.png";
 
 `useState()` hook brings **state** to a functional component. Since it is a hook, it can only be used inside a functional component.
@@ -81,4 +82,14 @@ export default function App() {
 }
 ```
 
-Above code sets `"orange"` as the default color. On click of the button, the state value is changed to `"red"`. You can try the code online in [codesandbox](https://codesandbox.io/s/react-hooks-idcwej?from-embed).
+Above code sets `"orange"` as the default color. On click of the button, the state value is changed to `"red"`. You can try the code online in <Olink link="https://codesandbox.io/s/react-hooks-idcwej?file=/src/useState/basic.js">CodeSandbox</Olink>.
+
+## Multiple State Values
+
+We can declare more than one state variables inside a functional component using multiple `useState()` invokations.
+
+```javascript
+const [color, setColor] = useState();
+const [width, setWidth] = useState();
+const [interest, setInterest] = useState();
+```
