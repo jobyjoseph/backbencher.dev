@@ -6,6 +6,8 @@ description: "useEffect() hook brings different life-cycle methods to functional
 tags: ["react"]
 ---
 
+import Olink from "../../../../src/components/olink";
+
 `useEffect()` hook brings different life-cycle methods to a **functional component**. This hook performs side-effects in functional component. If you did not get any idea, do not worry. You can understand in detail by reading below sections.
 
 ## Import useEffect
@@ -29,3 +31,38 @@ useEffect(() => {
 The callback function passed to `useEffect()` is invoked as a side-effect on change of any state variables.
 
 What all state variables we need to track, that information is passed to the second array argument.
+
+## No Dependency Array
+
+We learned that `useEffect()` accepts two arguments. In that, second argument is called the **dependency array**. What if we are not passing the second argument?
+
+```javascript
+useEffect(() => {
+  console.log("Oh! Side-effect is triggered.");
+});
+```
+
+Here, since `useEffect()` does not have any dependency array to check against, it will invoke the callback function on component load and on every state change.
+
+Here is a code which you can try:
+
+```javascript
+import { useEffect, useState } from "react";
+
+export default function () {
+  const [random, setRandom] = useState();
+
+  //highlight-start
+  useEffect(() => {
+    console.log("Oh! Side-effect is triggered.");
+  });
+  //highlight-end
+  const buttonClickHander = () => {
+    setRandom(Math.random());
+  };
+
+  return <button onClick={buttonClickHander}>Click Me!</button>;
+}
+```
+
+Above code updates the value of `random` state variable on each button click. The `"Oh! Side-effect is triggered."` message is printed in the console on the component load and on every button click. You can try above code online at <Olink link="https://codesandbox.io/s/react-hooks-idcwej?file=/src/useEffect/noDependencyArray.js">CodeSandbox</Olink>.

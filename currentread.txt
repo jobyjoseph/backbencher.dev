@@ -32,7 +32,7 @@ https://javascript.info/recursion
 https://jsbin.com/bemoneziju/edit?js,console - Trying leetcode array
 
 =====================
-https://frontendmasters.com/courses/complete-react-v6/eslint/
+https://frontendmasters.com/courses/intermediate-react-v3/useeffect/
 =====================
 
 Extreme programming - https://www.amazon.in/Extreme-Programming-Explained-Embrace-Change/dp/0321278658
