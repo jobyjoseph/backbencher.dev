@@ -66,3 +66,30 @@ export default function () {
 ```
 
 Above code updates the value of `random` state variable on each button click. The `"Oh! Side-effect is triggered."` message is printed in the console on the component load and on every button click. You can try above code online at <Olink link="https://codesandbox.io/s/react-hooks-idcwej?file=/src/useEffect/noDependencyArray.js">CodeSandbox</Olink>.
+
+## Empty Dependency Array
+
+Here, we are passing the second dependency array argument as an empty array(`[]`). That is the way of telling React that, there are no state variables to watch for. Therefore, in this case, the `useEffect()` callback function will run only once when the component loads.
+
+```javascript
+useEffect(() => {
+  console.log("Loaded on component load");
+}, []);
+```
+
+Above code is equivalent to `componentDidMount()` lifecycle method in **class components**.
+
+You can play with `useEffect()` hook with empty dependency array in <Olink link="https://codesandbox.io/s/react-hooks-idcwej?file=/src/useEffect/emptyDependencyArray.js">CodeSandbox</Olink>.
+
+## Selective Dependency Array
+
+Say, we have two state variables in our component. And, we want `useEffect()` hook to invoke the callback function, only when one of the state variable changes. In this case, we need to pass only that state variable name to the dependency array.
+
+```javascript
+const [color, setColor] = useState();
+const [age, setAge] = useState();
+
+useEffect(() => {
+  console.log("Color changed!");
+}, [color]);
+```
