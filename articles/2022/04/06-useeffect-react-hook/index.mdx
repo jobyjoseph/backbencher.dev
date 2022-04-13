@@ -83,7 +83,7 @@ You can play with `useEffect()` hook with empty dependency array in <Olink link=
 
 ## Selective Dependency Array
 
-Say, we have two state variables in our component. And, we want `useEffect()` hook to invoke the callback function, only when one of the state variable changes. In this case, we need to pass only that state variable name to the dependency array.
+Say, we have two state variables in our component. And, we want `useEffect()` hook to invoke the callback function, only when **one of the state variable changes**. In this case, we need to pass only that state variable name to the dependency array.
 
 ```javascript
 const [color, setColor] = useState();
@@ -93,3 +93,37 @@ useEffect(() => {
   console.log("Color changed!");
 }, [color]);
 ```
+
+Here is the full component code which changes the `color` and `age` values through a button click.
+
+```javascript
+import React, { useEffect, useState } from "react";
+
+export default function () {
+  const [color, setColor] = useState();
+  const [age, setAge] = useState();
+
+  useEffect(() => {
+    console.log("Color changed!");
+  }, [color]);
+
+  const colorClickHander = () => {
+    setColor(Math.random());
+  };
+
+  const ageClickHander = () => {
+    setAge(Math.random());
+  };
+
+  return (
+    <div>
+      <button onClick={colorClickHander}>Change Color</button>
+      <button onClick={ageClickHander}>Change Age</button>
+    </div>
+  );
+}
+```
+
+Since we are tracking only the `color` variable, changing the value of `age` does not have any side effect.
+
+When the above component loads, it prints the `"Color changed!"` message once. Later, we can see the message logged again only when the value of `color` changes.
