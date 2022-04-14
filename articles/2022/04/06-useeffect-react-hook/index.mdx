@@ -127,3 +127,34 @@ export default function () {
 Since we are tracking only the `color` variable, changing the value of `age` does not have any side effect.
 
 When the above component loads, it prints the `"Color changed!"` message once. Later, we can see the message logged again only when the value of `color` changes.
+
+## Async Callback Function
+
+What if we need to use `await` inside `useEffect()` callback function? Here is how the code we wish to write:
+
+```javascript
+useEffect(async () => {
+  console.log("hi");
+  // do something with await
+}, []);
+```
+
+Using `async` directly in the callback function is NOT allowed by React. It throws a very detailed error along with a solution approach.
+
+```
+Warning: useEffect must not return anything besides a function, which is used for clean-up.
+
+It looks like you wrote useEffect(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately
+```
+
+As suggested in the error message, we can go for an IIFE inside the effect to achieve our goal:
+
+```javascript
+useEffect(() => {
+  // highlight-start
+  (async () => {
+    console.log("hi");
+  })();
+  // highlight-end
+}, []);
+```
