@@ -139,6 +139,8 @@ useEffect(async () => {
 }, []);
 ```
 
+> Before trying `async` in your code, ensure that `@babel/plugin-transform-runtime` is installed and configured in `.babelrc` file.
+
 Using `async` directly in the callback function is NOT allowed by React. It throws a very detailed error along with a solution approach.
 
 ```
@@ -158,3 +160,47 @@ useEffect(() => {
   // highlight-end
 }, []);
 ```
+
+## Callback Returning a Function
+
+In class components, there is a lifecycle method called `ComponentDidUnmount()`. The method is fired when a component is **removed** from the DOM. Usually, some logic like clearing a timer is executed inside this lifecycle method. Now the question is, how can we bring that lifecycle method to a functional component?
+
+As we just learned, `useEffect()` accepts a callback function and a dependency array. Usually the callback function returns `undefined`. Instead, we are going to **return a function** now:
+
+```javascript
+useEffect(() => {
+  return () => {
+    console.log("The returned function");
+  };
+}, []);
+```
+
+This returned function is invoked when the component is removed from the DOM.
+
+In order to test this, we need to write a logic in the parent Component to hide this component based on some condition.
+
+```javascript
+const App = () => {
+  const [showComponent, setShowComponent] = useState(true);
+
+  return (
+    <div>
+      {showComponent && <MyComponent />}
+      <br />
+      <button
+        onClick={() => {
+          setShowComponent(false);
+        }}
+      >
+        Hide
+      </button>
+    </div>
+  );
+};
+```
+
+As we can see, in the parent component, we are hiding our component when the button is clicked. So, when user clicks on the button, we can see `"The returned function"` in the browser console.
+
+Some of the cases that might need componentDidUnmount are clearing timers, unsubscribe RxJS events or websocket events, detach event handlers.
+
+You can see the working code online at <Olink link="https://codesandbox.io/s/react-hooks-idcwej?file=/src/useEffect/componentDidUnmount.js">CodeSandbox</Olink>.
