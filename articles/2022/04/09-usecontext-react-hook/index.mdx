@@ -53,7 +53,7 @@ function L4() {
 }
 ```
 
-We need to now pass some data from `L1` to `L4`. How to do it? The only way is like water flowing down in steps. The data needs to be passed from `L1` to `L2` through props. Then from `L2` to `L3`, `L3` to `L4`. Here is how it looks like:
+We need to now pass some data from `L1` to `L4`. How to do it? The only way is like water flowing down in steps. The data needs to be passed from `L1` to `L2` through props, then from `L2` to `L3` and finally, `L3` to `L4`. Here is how it looks like:
 
 ```javascript
 export default function L1() {
@@ -104,3 +104,70 @@ Above code produces below output:
 />
 
 You can play with this code online at <Olink link="https://codesandbox.io/s/react-hooks-idcwej?file=/src/useContext/withoutContext.js">CodeSandbox</Olink>.
+
+## Passing Data Using Context
+
+Context acts like a global space. Once we create and connect a context to a component, the component and all its children have access to the context to fetch the data. It will be more clear with an example.
+
+### Create Context
+
+First step is to create a context object. For that, import `createContext` from React.
+
+```javascript
+import { createContext } from "react";
+```
+
+Next, we create a context object.
+
+```javascript
+const NameContext = createContext("John");
+```
+
+Here, `"John"` is the default value of the context. We can override the value when using the context object.
+
+### Provide Context
+
+We need to now provide the context to the `L1` component. For that, wrap the `L1` component inside `NameContext.provider`. Also, we can pass a `value` attribute. This value is then available to all child components.
+
+```javascript
+export default function L1() {
+  const name = "Joby";
+
+  return (
+    <NameContext.Provider value={name}>
+      <div>
+        <h4>Level 1</h4>
+        <L2 name={name} />
+      </div>
+    </NameContext.Provider>
+  );
+}
+```
+
+As we can see above, we are passing a string `"Joby"` as value. This new value override the default `"John"` value.
+
+### Read Context Value
+
+In the earlier section, we provided the value in `L1` component. Next, we are trying to take the value in `L4` component. For that, we can use `useContext()` hook.
+
+```javascript
+function L4() {
+  const name = useContext(NameContext);
+  return (
+    <div>
+      <h4>Level 4</h4>
+      <h3>Name is {name}</h3>
+    </div>
+  );
+}
+```
+
+`useContext()` accepts a context object and returns the value it stores. This is how `useContext()` shares data across components.
+
+## useContext() Usage
+
+If in our application, we need some data to be available globally, it is good to use **Context**. One application can be site theme. Based on Light or Dark theme, all the components needs to update their styles.
+
+### Context vs Redux
+
+Latest Redux internally uses Context API. It is suggested to use either Redux or Context. Using both at the same time is not suggested.
