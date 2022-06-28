@@ -25,7 +25,7 @@ const PostTemplate = ({ data: { mdx: article } }) => (
   >
     <h1>{article.frontmatter.title}</h1>
     <div>
-      <small>Published on {article.frontmatter.date}</small>
+      <small>Last updated on {article.frontmatter.date}</small>
     </div>
     <MDXRenderer>{article.body}</MDXRenderer>
     <RelatedArticles tag={article.frontmatter.tags[0]} />
