@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function ({ link, children }) {
+export default function ({ link, children, bold }) {
   return (
-    <a href={link} target="_blank" rel="nofollow noreferrer">
+    <a href={link} style={{fontWeight: bold?700:400}} target="_blank" rel="nofollow noreferrer">
       {children}
     </a>
   );
