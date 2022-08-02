@@ -1,16 +1,22 @@
 .questionContainer{
   padding: 20px;
-  background: #f9f9f9;
+  background: #fbfbfb;
   border: 1px solid #eee;
   position: relative;
   margin-bottom: 40px;
+  border-radius: 5px;
 }
 
 .answerLink{
   margin-top: 10px;
-  color: #1e88e5;
+  color: #fff;
   display: block;
   text-align: left;
+  background: #4CAF50;
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 14px;
+  border-radius: 3px;
 }
 
 .slno {

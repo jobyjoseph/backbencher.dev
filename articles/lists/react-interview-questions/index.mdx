@@ -7,7 +7,6 @@ tags: ["react"]
 ---
 
 import Divider from "../../../src/components/divider";
-import { Link } from "gatsby";
 
 <SlNoReset />
 
@@ -23,8 +22,14 @@ Here is a list of React interview questions to prepare for job interviews.
   When we setup a React project, always we import two libraries,
   <code class="language-text">react</code> and <code class="language-text">
     react-dom
-  </code>. If those two are used together always, why they are kept as two separate
-  files?
+  </code>.
+
+```javascript 
+import React from "react"; 
+import ReactDOM from "react-dom";
+``` 
+
+If those two are used together always, why they are kept as two separate files?
 </InterviewQuestion>
 
 ### Context API
