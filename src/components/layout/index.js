@@ -11,6 +11,7 @@ import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
 import GoogleAd from "../googlead";
+import * as styles from "./layout.module.scss";
 
 const Layout = ({ children, title, description }) => {
   return (
@@ -22,12 +23,22 @@ const Layout = ({ children, title, description }) => {
           <div className="container">
             <div className="contentArea">{children}</div>
             <div className="sidebar">
-              <GoogleAd
-                style={{ display: "block" }}
-                format="auto"
-                slot="6627637198"
-                responsive="true"
-              />
+              <div className={styles.adContainer}>
+                <GoogleAd
+                  style={{ display: "block" }}
+                  format="auto"
+                  slot="6627637198"
+                  responsive="true"
+                />
+              </div>
+              <div className={styles.adContainer}>
+                <GoogleAd
+                  style={{ display: "block" }}
+                  format="auto"
+                  slot="4442358683"
+                  responsive="true"
+                />
+              </div>
             </div>
           </div>
         </main>

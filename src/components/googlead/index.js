@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import * as styles from "./googlead.module.scss";
 
 const GoogleAd = ({
   className,
@@ -20,7 +19,7 @@ const GoogleAd = ({
     }
   }, []);
   return (
-    <div className={styles.adContainer}>
+    <div>
       <ins
         className="adsbygoogle"
         style={style}
