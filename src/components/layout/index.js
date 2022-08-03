@@ -7,12 +7,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { MDXProvider } from "@mdx-js/react";
 import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
-import InterviewQuestion, { SlNoReset } from "../interview-question";
-const shortcodes = { InterviewQuestion, SlNoReset };
+import GoogleAd from "../googlead";
 
 const Layout = ({ children, title, description }) => {
   return (
@@ -22,8 +20,14 @@ const Layout = ({ children, title, description }) => {
       <div>
         <main>
           <div className="container">
-            <div className="contentArea">
-              <MDXProvider components={shortcodes}>{children}</MDXProvider>
+            <div className="contentArea">{children}</div>
+            <div className="sidebar">
+              <GoogleAd
+                style={{ display: "block" }}
+                format="auto"
+                slot="6627637198"
+                responsive="true"
+              />
             </div>
           </div>
         </main>

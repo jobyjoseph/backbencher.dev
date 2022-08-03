@@ -4,12 +4,12 @@ import * as styles from "./googlead.module.scss";
 const GoogleAd = ({
   className,
   style,
-  layout,
+  layout = "",
   format,
   client = "ca-pub-5942804533883970",
   slot,
   responsive,
-  layoutKey,
+  layoutKey = "",
 }) => {
   useEffect(() => {
     try {
