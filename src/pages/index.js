@@ -6,11 +6,14 @@ import * as styles from "../styles/index.module.scss";
 const IndexPage = ({ data }) => {
   console.log(data);
   return (
-    <Layout title="Backbencher.dev">
+    <Layout title="Home Page">
+      <h1 className={styles.mainHeader}>All Articles</h1>
       {data.allMdx.nodes.map(({ id, excerpt, frontmatter, slug }) => (
         <div className={styles.item}>
-          <Link to={`/articles/${frontmatter.slug}`}>{frontmatter.title}</Link>{" "}
           <span className={styles.date}>{frontmatter.date}</span>
+          <Link to={`/articles/${frontmatter.slug}`}>
+            {frontmatter.title}
+          </Link>{" "}
         </div>
       ))}
     </Layout>
