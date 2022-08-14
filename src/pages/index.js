@@ -4,7 +4,6 @@ import Layout from "../components/layout";
 import * as styles from "../styles/index.module.scss";
 
 const IndexPage = ({ data }) => {
-  console.log(data);
   return (
     <Layout title="Home Page">
       <h1 className={styles.mainHeader}>All Articles</h1>

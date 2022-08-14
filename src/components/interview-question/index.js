@@ -23,7 +23,7 @@ function InterviewQuestion({ link, children }) {
     <div className={styles.questionContainer}>
       <div className={styles.slno}>{slno}</div>
       {children}
-      <div className={styles.answerContainer}>
+      <div>
         <Link to={link} className={styles.answerLink}>
           View Answer
         </Link>

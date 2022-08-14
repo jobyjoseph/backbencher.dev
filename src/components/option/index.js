@@ -11,7 +11,7 @@ function Option(props) {
       return;
     }
 
-    console.log(options.setOptionClicked(true));
+    options.setOptionClicked(true);
     if (props.isAnswer === "yes") {
       setAnswerClass(styles.correct);
     } else {
