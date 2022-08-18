@@ -1,12 +1,13 @@
 ---
 title: "Top 9 React Interview Questions and Answers for 2022"
-date: 2022-08-15
+date: 2022-08-18
 slug: react-interview-questions
 description: "React is the preferred library in most of the web projects. Most of the projects which I come across follows either React directly or some other flavors of React like Next.js or Gatsby. Therefore, it is important to know different capabilities of React."
 tags: ["react"]
 ---
 
 import InterviewQuestion, { SlNoReset } from "../../../src/components/interview-question";
+import Divider from "../../../src/components/divider";
 
 <SlNoReset />
 
@@ -14,17 +15,47 @@ React is the preferred library in most of the web projects. Most of the projects
 
 The questions and their solutions provided here are more realistic and practical. It is written from my experience of using React in my daily projects and taking several interviews for my company. I am not a supporter of asking tricky or difficult React questions that do not have much use or impact in actual project. I try to test if the candidate can use a feature in React in the most appropriate way. Sometimes, I twist the question little bit just to know if the candidate has actually good handson understanding or they have only theoritical understanding of the subject.
 
+> This article is a work in progress. I am re-organizing the existing articles and adding more questions in these days.
+
 ### Basics, Fun or Good to Know
 
-<InterviewQuestion link="/articles/writing-react-application-without-jsx-webpack">
-  Is it possible to write a React application without JSX?
-</InterviewQuestion>
+This section covers basics of React. Most of the questions are suitable for a Junior React developer role. In addition to direct project related questions, we discuss about some concepts, mainly to check, how in-depth a candidate has tried to understand React.
 
-<InterviewQuestion link="/articles/why-react-and-react-dom-libraries-kept-in-two-separate-files">
-  When we setup a React project, always we import two libraries,
-  <code class="language-text">react</code> and <code class="language-text">
-    react-dom
-  </code>.
+**Question 1:**
+
+Is it possible to write a React application without JSX?
+
+**Answer:**
+
+Yes. It is possible.
+
+In a React application, React components are created using `react.js` library. It is then rendered in a browser using `react-dom.js`. We can include both of these files directly from a CDN and use it.
+
+```html
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+```
+
+Here is an example of a React component that is written without JSX.
+
+```javascript
+const MyComponent = React.createElement("h1", null, "Hello World!");
+ReactDOM.render(MyComponent, document.getElementById("root"));
+```
+
+`ReactDOM` is taken from `react-dom.js` library.
+
+<Divider />
+
+**Question 2:**
+
+When we setup a React project, always we import two libraries, `react` and `react-dom`.
 
 ```javascript 
 import React from "react"; 
@@ -32,7 +63,18 @@ import ReactDOM from "react-dom";
 ``` 
 
 If those two are used together always, why they are kept as two separate files?
-</InterviewQuestion>
+
+**Answer:**
+
+React library is used to create **components**. A component is a building block of an application. React library has classes and methods for this purpose.
+
+On the other hand, React-DOM deals with **placing the components** on browser. It deals with shadow DOM and other efficient rendering techniques.
+
+Now, if we consider React Native development, we again use React to build the app components. But we use React Native to build and publish the app for mobile devices.
+
+We can see that React, as a component library is reused by several platforms like React Native, React 3D or React Art. That is why it is maintained as a separate project and package.
+
+<Divider />
 
 <InterviewQuestion link="/articles/explanation-each-child-list-unique-key-react">
   When I ran my React project, I am seeing this error in the browser console:
@@ -69,6 +111,16 @@ Can you please write down JavaScript equivalent of this code?
 <InterviewQuestion link="/articles/when-to-use-context-api-in-react">
   When is it ideal to use Context API in React?
 </InterviewQuestion>
+
+### Performance
+
+**Question:**
+
+How to measure performance of a React application?
+
+**Answer:**
+
+One way to measure the performance of a React component is by using **Profiler**.
 
 ### Tools
 
