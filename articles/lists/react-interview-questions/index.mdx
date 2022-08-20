@@ -1,15 +1,12 @@
 ---
-title: "Top 9 React Interview Questions and Answers for 2022"
-date: 2022-08-18
+title: "Top 10 React Interview Questions and Answers for 2022"
+date: 2022-08-20
 slug: react-interview-questions
 description: "React is the preferred library in most of the web projects. Most of the projects which I come across follows either React directly or some other flavors of React like Next.js or Gatsby. Therefore, it is important to know different capabilities of React."
 tags: ["react"]
 ---
 
-import InterviewQuestion, { SlNoReset } from "../../../src/components/interview-question";
 import Divider from "../../../src/components/divider";
-
-<SlNoReset />
 
 React is the preferred library in most of the web projects. Most of the projects which I come across follow either React directly or through some other flavors of React like _Next.js_ or _Gatsby_. Therefore, it is important to know different capabilities of React.
 
@@ -76,8 +73,9 @@ We can see that React, as a component library is reused by several platforms lik
 
 <Divider />
 
-<InterviewQuestion link="/articles/explanation-each-child-list-unique-key-react">
-  When I ran my React project, I am seeing this error in the browser console:
+**Question 3:**
+
+When I ran my React project, I am seeing this error in the browser console:
 
 ```
 Warning: Each child in a list should have a unique "key" prop.
@@ -85,13 +83,57 @@ Warning: Each child in a list should have a unique "key" prop.
 
 What might have happened?
 
-</InterviewQuestion>
+**Answer:**
 
-<InterviewQuestion link="/articles/why-we-use-jsx-react-project">
-  What is JSX? and why do we use it in React project?
-</InterviewQuestion>
+We receive this error when we try to render an array of components without a `key`. React recommends adding a unique `key` attribute to all the components that are rendered from an array.
 
-<InterviewQuestion link="/articles/converting-jsx-to-javascript">
+```javascript
+reactComponentsArray.map(Component => <Component key={uniqueId} />);
+```
+
+React internally keeps track of components and their updates using this key. Without the key, each time, React needs to re-render the entire component list which affects the performance. That is why React alerts the developer during the development. This error message will not be displayed when using production build of React library.
+
+<Divider/>
+
+**Question 4:**
+  
+What is JSX? and why do we use it in React project?
+
+**Answer:**
+
+JSX enables us to write React components using a syntax similar to HTML.
+
+Here is a React component created **without** JSX:
+
+```javascript
+const Pet = (props) => {
+  return React.createElement("div", {}, [
+    React.createElement("h1", {}, props.name),
+    React.createElement("h2", {}, props.animal),
+    React.createElement("h2", {}, props.breed),
+  ]);
+};
+```
+
+Here is the same component written using JSX:
+
+```javascript
+const Pet = (props) => {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <h2>{props.animal}</h2>
+      <h2>{props.breed}</h2>
+    </div>
+  );
+};
+```
+
+JSX adds the readability of the code.
+
+<Divider />
+
+**Question 5:**
 
 Here is a JSX code snippet:
 
@@ -104,17 +146,64 @@ Here is a JSX code snippet:
 
 Can you please write down JavaScript equivalent of this code?
 
-</InterviewQuestion>
+> This question is to check if the candidate has heard about `React.createElement()`. Usually developers jump into a React project and start building components using JSX. Only a curious developer who went to know more about the under the hood details will answer this question. If a candidate answers this question, I will be more interested.
+
+**Answer:**
+
+JSX is a syntactical sugar for React developers to easily create components. We use transpilers like Babel to convert JSX to JavaScript.
+
+When Babel converts above code to JavaScript, it makes use of `React.createElement()`. This method accepts 3 parameters.
+
+1. Name of component
+2. Attributes of the component
+3. Children of the component
+
+Here is how the JavaScript output of above code looks like:
+
+```javascript
+React.createElement("div", {}, [
+  React.createElement("h1", {}, "Hello JSX"),
+  React.createElement(
+    "h2",
+    {
+      label: "screen",
+    },
+    "Sub heading"
+  ),
+]);
+```
+
+<Divider />
 
 ### Context API
 
-<InterviewQuestion link="/articles/when-to-use-context-api-in-react">
-  When is it ideal to use Context API in React?
-</InterviewQuestion>
+**Question 6:**
+
+When is it ideal to use Context API in React?
+
+**Answer:**
+
+In a typical React application, there will be lot of components one nested inside another. The depth of nesting can be really big in some cases. What if we need to pass a value from parent component to a child component that is nested few levels deep?
+
+One solution is to **pass the value as props** from one level to next level. This is more kind of water flowing through steps. Even though this solution works, it can be a nightmare for the developer sometimes.
+
+Context API can help us here. We can set the value to be passed to the context using `Provider`. Here is an example where I pass the value as `"dog"`.
+
+```javascript
+<ThemeContext.Provider value="dog">
+  // ... Nested components
+</ThemeContext.Provider>
+```
+
+And then inside the nested component where we need to get the value, retrieve it using `this.context`.
+
+Above example assumed we are using class components. In function components we can make use of `useContext()` hook.
+
+<Divider />
 
 ### Performance
 
-**Question:**
+**Question 7:**
 
 How to measure performance of a React application?
 
@@ -122,20 +211,110 @@ How to measure performance of a React application?
 
 One way to measure the performance of a React component is by using **Profiler**.
 
+<Divider />
+
 ### Tools
 
-<InterviewQuestion link="/articles/webpack-or-parcel-in-react-project">
-  For a React project, will you choose Webpack or Parcel?
-</InterviewQuestion>
+**Question 8:**
 
-<InterviewQuestion link="/articles/files-and-folders-to-exclude-using-gitignore-react-project">
-  You are going to initialize your React project as a Git repository. What all
-  files or folders you usually add to your{" "}
-  <code class="language-text">.gitignore</code> file?
-</InterviewQuestion>
+For a React project, will you choose Webpack or Parcel?
 
-<InterviewQuestion link="/articles/performance-improvement-using-named-imports">
-  Which of the following `import` techniques is better for performance and why?
+**Answer:**
+
+Webpack and Parcel are two tools to bundle files in a React project. We are trying to compare both of them and make better decisions in our React project.
+
+> For busy readers, if you are building a big React project or needs to suggest a bundler for an upcoming big project, Webpack is the choice.
+
+##### Zero Configuration
+
+The main highlight of **Parcel** bundler is that we can start using Parcel just like that. No configurations are required. But, from Webpack 5 onwards, we can use Webpack also with zero configuration.
+
+Typically there will be a `webpack.config.js` Webpack config file in a project. In some projects, there will be multiple config files. Then, based on the environment, we take different type of builds.
+
+So regarding configuration, both are good and easy to start. But as more and more customiztion is required in the bundle, we need to go with Webpack.
+
+##### Code-Splitting
+
+Both performs code splitting. But, Parcel throws out all the output files to a single folder. So sometimes the output folder is a big mess of CSS, JS and html files.
+
+On the other hand, we can tell Webpack to group CSS, JS, Images or HTML to separate folders and keep the project more structured.
+
+##### Bundling Speed
+
+Parcel is slow for the first build. Then it picks up.
+
+Webpack takes more time based on the configurations we write.
+
+Both tools support live hot reload in their own way.
+
+##### Community Support
+
+That is everything for a serious project. If something goes wrong, there should be a strong community to support. Webpack is a clear winner there.
+
+If you are looking for a Webpack plugin, 99% it will be there. Sometimes more than one will be available. You just have to pick the one with more stars.
+
+Parcel is a great starter for development, teaching or proof of concepts. In the long run, everyone needs Webpack.
+
+<Divider />
+
+**Question 9:**
+
+You are going to initialize your React project as a Git repository. What all files or folders you usually add to your `.gitignore` file?
+
+**Answer:**
+
+Files or folders added in `.gitignore` file are avoided by Git while tracking. For a typical React project we add following files or folders in `.gitignore`.
+
+##### node_modules
+
+Like any other Node projects, we ignore `node_modules/` directory. Including `node_modules` directory increases the project size to a large extend. Other than the size, it is always good to install the packages from `package.json` if a new developer is cloning the project.
+
+##### coverage
+
+When we implement code coverage in our project, all the reports are stored in `coverage/` folder. We do not want that to be uploaded to Git server.
+
+##### DS_Store
+
+Mac OS creates this file in every folder if we open that folder in `Finder`. DS_Store stands for Desktop Services Store. The file basically stores information about the current folder and other files around it. It does not have any signifance specific to our React project.
+
+##### Distribution
+
+`dist/` is the name of a typical directory used to store distribution files. That is the common naming convention. If your project has another name for output folder, give that name in `.gitignore`.
+
+##### IDE Specific
+
+If we are working in Visual Studio Code, it automatically creates a `.vscode` directory to store the project settings. Other editors like _Sublime Text_ has its own versions of settings file. We can exclude those files or directories from versioning.
+
+##### Logs
+
+Any logs or directories that contains just log information can be ignored. That folder will keep on getting larger and its totally unnecesary to include it in versioning.
+
+Here is an example `.gitignore` file.
+
+```
+.idea/
+.vscode/
+node_modules/
+build
+.DS_Store
+*.tgz
+my-app*
+template/src/__tests__/__snapshots__/
+lerna-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.changelog
+.npm/
+```
+
+Other informations we might add to `.gitignore` are changelogs, snapshots or build zip files.
+
+<Divider />
+
+**Question 10:**
+
+Which of the following `import` techniques is better for performance and why?
 
 ```javascript
 // Method 1
@@ -144,4 +323,24 @@ import Lodash from "lodash";
 import { capitalize } from "lodash";
 ```
 
-</InterviewQuestion>
+**Answer:**
+
+In a JavaScript or Node.js project, we can `import` modules using different ways. Here are two examples which we discuss today.
+
+```javascript
+// Default import
+import Lodash from "lodash";
+Lodash.capitalize("hello");
+
+// Named import
+import { capitalize } from "lodash";
+capitalize("hello");
+```
+
+Lodash is just an example used to demonstrate the performance. We all know that lodash contains several utility methods.
+
+Both the types of `import` works. But the performance of both techniques vary based on the bundler we use. Different bundlers use the different ways for **tree shaking**.
+
+> Tree shaking is the process taken by bundlers to find out what all methods or modules need to be included in the output bundle.
+
+It is always advised to use **named imports**. It makes sure that only the required modules are loaded to the output bundle.
