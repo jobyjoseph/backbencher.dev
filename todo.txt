@@ -1,0 +1,2 @@
+- Try buy me a coffee once visitors touch 1k per day
+- Add context interview questions to React
