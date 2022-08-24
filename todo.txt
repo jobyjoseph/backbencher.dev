@@ -1,2 +1,4 @@
 - Try buy me a coffee once visitors touch 1k per day
 - Add context interview questions to React
+- Add buy me a coffee link below logo in mobile devices
+- Add profile box

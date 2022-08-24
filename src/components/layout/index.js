@@ -11,6 +11,7 @@ import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
 import GoogleAd from "../googlead";
+import ProfileBox from "../profile-box";
 import * as styles from "./layout.module.scss";
 
 const Layout = ({ children, title, description }) => {
@@ -23,6 +24,7 @@ const Layout = ({ children, title, description }) => {
           <div className="container">
             <div className="contentArea">{children}</div>
             <div className="sidebar">
+              <ProfileBox />
               <div className={styles.adContainer}>
                 <GoogleAd
                   style={{ display: "block" }}

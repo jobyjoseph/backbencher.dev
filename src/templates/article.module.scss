@@ -1,4 +1,12 @@
 .adContainer {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.buymeacoffee {
+  margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }

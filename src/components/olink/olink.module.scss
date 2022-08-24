@@ -6,10 +6,19 @@
 }
 
 .link {
-
+    display: inline;
 }
 
 .pink {
     background-color: #BA369A;
     color: #fff;
+}
+
+.buymeacoffee {
+    box-shadow: none;
+    background: #FEDD03;
+    color: #000;
+    border: 1px solid #d3bb1d;
+    font-size: 16px;
+    font-weight: bold;
 }

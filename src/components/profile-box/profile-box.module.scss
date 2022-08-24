@@ -1,0 +1,40 @@
+.profileBoxContainer {
+    background: #1F2937;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+
+    .profileImage {
+        border-radius: 50%;
+        width: 136px;
+        height: 136px;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .profileLink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+
+        img {
+            border-radius: 2px;
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+        }
+    }
+
+    .role {
+        font-size: 14px;
+    }
+
+    .buyMeACoffee {
+        margin-top: 20px;
+    }
+}
