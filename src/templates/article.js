@@ -29,14 +29,6 @@ const PostTemplate = ({ data: { mdx: article } }) => (
     <div>
       <small>Last updated on {article.frontmatter.date}</small>
     </div>
-    <div className={styles.adContainer}>
-      <GoogleAd
-        style={{ display: "block", textAlign: "center" }}
-        layout="in-article"
-        format="fluid"
-        slot="9034656808"
-      />
-    </div>
     <MDXRenderer>{article.body}</MDXRenderer>
     <div className={styles.adContainer}>
       <GoogleAd
