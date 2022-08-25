@@ -40,6 +40,13 @@ const PostTemplate = ({ data: { mdx: article } }) => (
       </Olink>
     </div>
     <MDXRenderer>{article.body}</MDXRenderer>
+    <p>
+      If I could help you to save some time, I am happy. You can{" "}
+      <Olink link="https://www.buymeacoffee.com/jobyjoseph">
+        buy me a coffee
+      </Olink>{" "}
+      if you want. That is a big motivation for me to write more.
+    </p>
     <div className={styles.adContainer}>
       <GoogleAd
         style={{ display: "block", textAlign: "center" }}
