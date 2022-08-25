@@ -5,7 +5,6 @@ import Layout from "../components/layout";
 import RelatedArticles from "../components/relatedarticles";
 import * as styles from "./article.module.scss";
 import GoogleAd from "../components/googlead";
-import Olink from "../components/olink";
 
 export const query = graphql`
   query ($slug: String!) {
@@ -30,23 +29,7 @@ const PostTemplate = ({ data: { mdx: article } }) => (
     <div>
       <small>Last updated on {article.frontmatter.date}</small>
     </div>
-    <div className={styles.buymeacoffee}>
-      <Olink
-        link="https://www.buymeacoffee.com/jobyjoseph"
-        type="button"
-        background="buymeacoffee"
-      >
-        Buy Me a Coffee!
-      </Olink>
-    </div>
     <MDXRenderer>{article.body}</MDXRenderer>
-    <p>
-      If I could help you to save some time, I am happy. You can{" "}
-      <Olink link="https://www.buymeacoffee.com/jobyjoseph">
-        buy me a coffee
-      </Olink>{" "}
-      if you want. That is a big motivation for me to write more.
-    </p>
     <div className={styles.adContainer}>
       <GoogleAd
         style={{ display: "block", textAlign: "center" }}

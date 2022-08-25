@@ -1,6 +1,6 @@
 ---
-title: "Top 25 React Interview Questions and Answers for 2022"
-date: 2022-08-21
+title: "26 React Interview Questions and Answers for 2022"
+date: 2022-08-25
 slug: react-interview-questions
 description: "React is the preferred library in most of the web projects. Most of the projects which I come across follows either React directly or some other flavors of React like Next.js or Gatsby. Therefore, it is important to know different capabilities of React."
 tags: ["react"]
@@ -20,6 +20,7 @@ The questions and their solutions provided here are more realistic and practical
 - [Hooks](#hooks)
   - [useState()](#usestate-hook)
   - [useEffect()](#useeffect-hook)
+  - [useContext()](#usecontext-hook)
 - [Context API](#context-api)
 - [Performance](#performance)
 - [Tools](#tools)
@@ -509,9 +510,7 @@ When state variable is an object, `setState()` in class components automatically
 
 <Divider />
 
-<div id="useeffect-hook" />
-
-### useEffect()
+<h3 id="useeffect-hook">useEffect()</h3>
 
 **Question 16:**
 
@@ -709,41 +708,49 @@ useEffect(() => {
 
 <Divider />
 
-<div id="context-api" />
-
-## Context API
+<h3 id="usecontext-hook">Context API</h3>
 
 **Question 21:**
 
-When is it ideal to use Context API in React?
+When should we use React Context instead of prop-drilling?
+
+> _prop-drilling_ refers to the technique where we pass a value from one component to nested components through props.
 
 **Answer:**
 
-In a typical React application, there will be lot of components one nested inside another. The depth of nesting can be really big in some cases. What if we need to pass a value from parent component to a child component that is nested few levels deep?
+If we have a value that could be accessed anywhere from the application, we can consider **Context**. Few examples that fit to this condition is:
 
-One solution is to **pass the value as props** from one level to next level. This is more kind of water flowing through steps. Even though this solution works, it can be a nightmare for the developer sometimes.
+- Dark or light theme for a site
+- Global site level theme settings
+- User authentication status like is guest or is registered.
 
-Context API can help us here. We can set the value to be passed to the context using `Provider`. Here is an example where I pass the value as `"dog"`.
-
-```javascript
-<ThemeContext.Provider value="dog">
-  // ... Nested components
-</ThemeContext.Provider>
-```
-
-And then inside the nested component where we need to get the value, retrieve it using `this.context`.
-
-Above example assumed we are using class components. In function components we can make use of `useContext()` hook.
+If the value shared by a component is specific to that component and its children, it is good to use prop-drilling. That improves code readability and the developer can easily identify from where this value is coming.
 
 <Divider />
 
-<div id="hooks" />
+**Question 22:**
+
+Here we have a set of 5 React components that is nested one inside other. Component `A` is passing a value to component `E` through prop-drilling.
+
+```javascript
+const E = (props) => <h1>{props.fruit}</h1>;
+const D = (props) => <E fruit={props.fruit} />;
+const C = (props) => <D fruit={props.fruit} />;
+const B = (props) => <C fruit={props.fruit} />;
+const A = (props) => <B fruit={props.fruit} />;
+
+<A fruit="Apple" />;
+```
+
+How can we rewrite the same code using `useContext()`?
+
+<Divider />
 
 <div id="performance" />
 
 ## Performance
 
-**Question 22:**
+**Question 23:**
 
 How to measure performance of a React application?
 
@@ -757,7 +764,7 @@ One way to measure the performance of a React component is by using **Profiler**
 
 ## Tools
 
-**Question 23:**
+**Question 24:**
 
 For a React project, will you choose Webpack or Parcel?
 
@@ -799,7 +806,7 @@ Parcel is a great starter for development, teaching or proof of concepts. In the
 
 <Divider />
 
-**Question 24:**
+**Question 25:**
 
 You are going to initialize your React project as a Git repository. What all files or folders you usually add to your `.gitignore` file?
 
@@ -854,7 +861,7 @@ Other informations we might add to `.gitignore` are changelogs, snapshots or bui
 
 <Divider />
 
-**Question 25:**
+**Question 26:**
 
 Which of the following `import` techniques is better for performance and why?
 
