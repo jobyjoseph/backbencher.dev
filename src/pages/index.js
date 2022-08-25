@@ -4,15 +4,15 @@ import Layout from "../components/layout";
 import * as styles from "../styles/index.module.scss";
 
 const IndexPage = ({ data }) => {
+  const articleCount = data.allMdx.nodes.length;
   return (
     <Layout title="Home Page">
       <h1 className={styles.mainHeader}>All Articles</h1>
-      {data.allMdx.nodes.map(({ id, excerpt, frontmatter, slug }) => (
+      {data.allMdx.nodes.map(({ frontmatter }, index) => (
         <div className={styles.item}>
-          <span className={styles.date}>{frontmatter.date}</span>
           <Link to={`/articles/${frontmatter.slug}`}>
-            {frontmatter.title}
-          </Link>{" "}
+            {`${frontmatter.title}`}
+          </Link>
         </div>
       ))}
     </Layout>
