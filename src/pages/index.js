@@ -6,7 +6,7 @@ import * as styles from "../styles/index.module.scss";
 const IndexPage = ({ data }) => {
   const articleCount = data.allMdx.nodes.length;
   return (
-    <Layout title="Home Page">
+    <Layout title="React.js | JavaScript | Next.js | Web Articles">
       <h1 className={styles.mainHeader}>All Articles</h1>
       {data.allMdx.nodes.map(({ frontmatter }, index) => (
         <div className={styles.item}>

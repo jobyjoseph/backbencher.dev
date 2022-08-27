@@ -41,3 +41,28 @@ const A = (props) => <B fruit={props.fruit} />;
 ```
 
 How can we rewrite the same code using `useContext()`?
+
+**Answer:**
+
+```javascript
+import React, { useContext } from "react";
+
+const FruitContext = React.createContext();
+
+const E = (props) => {
+  const fruit = useContext(FruitContext);
+  return <h1>{fruit}</h1>;
+};
+
+const D = (props) => <E />;
+const C = (props) => <D />;
+const B = (props) => <C />;
+
+const A = (props) => (
+  <FruitContext.Provider value="Apple">
+    <B />
+  </FruitContext.Provider>
+);
+
+export default A;
+```

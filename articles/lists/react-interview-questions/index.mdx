@@ -1,6 +1,6 @@
 ---
 title: "26 React Interview Questions and Answers for 2022"
-date: 2022-08-25
+date: 2022-08-26
 slug: react-interview-questions
 description: "React is the preferred library in most of the web projects. Most of the projects which I come across follows either React directly or some other flavors of React like Next.js or Gatsby. Therefore, it is important to know different capabilities of React."
 tags: ["react"]
@@ -743,6 +743,31 @@ const A = (props) => <B fruit={props.fruit} />;
 ```
 
 How can we rewrite the same code using `useContext()`?
+
+**Answer:**
+
+```javascript
+import React, { useContext } from "react";
+
+const FruitContext = React.createContext();
+
+const E = (props) => {
+  const fruit = useContext(FruitContext);
+  return <h1>{fruit}</h1>;
+};
+
+const D = (props) => <E />;
+const C = (props) => <D />;
+const B = (props) => <C />;
+
+const A = (props) => (
+  <FruitContext.Provider value="Apple">
+    <B />
+  </FruitContext.Provider>
+);
+
+export default A;
+```
 
 <Divider />
 

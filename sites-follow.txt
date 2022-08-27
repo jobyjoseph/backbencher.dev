@@ -1,0 +1,8 @@
+Sites to Follow
+===============
+1. https://tc39er.us/
+
+Pages to Read
+=============
+1. https://frontendmasters.com/courses/tour-js-patterns/
+2. https://portal.gitnation.org/contents/future-features-of-js
