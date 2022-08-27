@@ -1,6 +1,6 @@
 ---
-title: "26 React Interview Questions and Answers for 2022"
-date: 2022-08-26
+title: "29 React Interview Questions and Answers for 2022"
+date: 2022-08-27
 slug: react-interview-questions
 description: "React is the preferred library in most of the web projects. Most of the projects which I come across follows either React directly or some other flavors of React like Next.js or Gatsby. Therefore, it is important to know different capabilities of React."
 tags: ["react"]
@@ -21,7 +21,6 @@ The questions and their solutions provided here are more realistic and practical
   - [useState()](#usestate-hook)
   - [useEffect()](#useeffect-hook)
   - [useContext()](#usecontext-hook)
-- [Context API](#context-api)
 - [Performance](#performance)
 - [Tools](#tools)
 
@@ -222,9 +221,103 @@ class Banner extends React.Component {
 
 In functional components, we can give any name to the `props` argument. But in class component `props` are always taken from `this.props`.
 
-<h2 id="hooks">Hooks</h2>
+<Divider />
 
 **Question 8:**
+
+Here is a React component that tries to display a variable:
+
+```javascript
+export default function App() {
+  const website = "backbencher.dev"; // highlight-line
+  return (
+    <div className="App">
+      <h1>Hello {website.toUpperCase()}</h1> //highlight-line
+    </div>
+  );
+}
+```
+
+I am trying to print the website name in capital letters directly inside JSX. Will that work?
+
+**Answer :**
+
+Yes. We can write any valid expression inside the curly bracket. Therefore, in this case the output will be `"Hello BACKBENCHER.DEV"`.
+
+<Divider />
+
+**Question 9:**
+
+Here we have got a React component. Inside the JSX, we invoke a function.
+
+```javascript
+//highlight-start
+function capitalize(inputStr) {
+  return inputStr.toUpperCase();
+}
+//highlight-end
+
+export default function App() {
+  const website = "backbencher.dev";
+  return (
+    <div className="App">
+      <h1>Hello {capitalize(website)}</h1> // highlight-line
+    </div>
+  );
+}
+```
+
+What will be the output? Will this code generate any error?
+
+**Answer:**
+
+This syntax is perfectly fine. Function invocation is a valid expression. The function is therefore invoked and the output printed will be `"Hello BACKBENCHER.DEV"`.
+
+<Divider />
+
+**Question 10:**
+
+> This is a little advanced question. It requires good understanding of JSX.
+
+What will be printed in the header?
+
+```javascript
+export default function App() {
+  const a = <div id="backbencher" />;
+
+  return (
+    <div className="App">
+      <h1>{a.props.id}</h1>
+    </div>
+  );
+}
+```
+
+**Answer:**
+
+The code displays `"backbencher"` inside `h1`.
+
+Every JSX is converted to a JavaScript object during transpiling. For example `<div id="backbencher" />` is converted to below object.
+
+```javascript
+{
+  type: "div",
+  key: null,
+  ref: null,
+  props: {
+    id: "backbencher"
+  },
+  // few more
+}
+```
+
+That is why we could read the `props` property and display the value. Due to the same reason, we can use JSX in conditions, function argument or funtion return value. Basically we can use JSX in any place we can use an object.
+
+<Divider />
+
+<h2 id="hooks">Hooks</h2>
+
+**Question 11:**
 
 What are hooks in React?
 
@@ -234,7 +327,7 @@ Hooks was introduced in React v16.8. It allows to use all React features without
 
 <Divider />
 
-**Question 9:**
+**Question 12:**
 
 Will React hooks work inside class components?
 
@@ -244,7 +337,7 @@ No. Hooks will work only inside functional components.
 
 <Divider />
 
-**Question 10:**
+**Question 13:**
 
 Why React hooks was introduced?
 
@@ -262,7 +355,7 @@ Fourth reason is, in a complex class component, related code are scattered in di
 
 <h3 id="usestate-hook">useState()</h3>
 
-**Question 11:**
+**Question 14:**
 
 How `useState` hook works? What is/are the arguments accepted by this hook and what is returned by the hook?
 
@@ -284,7 +377,7 @@ const [currentStateValue, functionToUpdateState] = useState(initialStateValue);
 
 <Divider />
 
-**Question 12:**
+**Question 15:**
 
 Here we have a class component with a state value. Each time the button in component is clicked, the count is incremented.
 
@@ -336,7 +429,7 @@ function Counter() {
 
 <Divider />
 
-**Question 13:**
+**Question 16:**
 
 Below we have a class component. It contains code to update the state based on previous state value.
 
@@ -410,7 +503,7 @@ function Counter() {
 
 <Divider />
 
-**Question 14:**
+**Question 17:**
 
 Here we have class component that updates the state using the input from a form.
 
@@ -498,7 +591,7 @@ Here we are merging object properties with the help of JavaScript spread operato
 
 <Divider />
 
-**Question 15:**
+**Question 18:**
 
 What are the differences in using hooks and class components with respect to state management?
 
@@ -512,7 +605,7 @@ When state variable is an object, `setState()` in class components automatically
 
 <h3 id="useeffect-hook">useEffect()</h3>
 
-**Question 16:**
+**Question 19:**
 
 What is the purpose of `useEffect` hook?
 
@@ -522,7 +615,7 @@ The Effect hook lets us to perform side effects in functional components. It hel
 
 <Divider />
 
-**Question 17:**
+**Question 20:**
 
 Here is a class component that prints _Boom_ in console whenever it is mounted or updated.
 
@@ -588,7 +681,7 @@ function Banner() {
 
 <Divider />
 
-**Question 18:**
+**Question 21:**
 
 Understand the code below:
 
@@ -630,7 +723,7 @@ useEffect(() => {
 
 <Divider />
 
-**Question 19:**
+**Question 22:**
 
 We have got a class component that updates time every second. It uses `componentDidMount()` to set the timer.
 
@@ -678,7 +771,7 @@ function Clock() {
 
 <Divider />
 
-**Question 20:**
+**Question 23:**
 
 We have a code snippet from a class component which registers and remove an event listener.
 
@@ -710,7 +803,7 @@ useEffect(() => {
 
 <h3 id="usecontext-hook">Context API</h3>
 
-**Question 21:**
+**Question 24:**
 
 When should we use React Context instead of prop-drilling?
 
@@ -728,7 +821,7 @@ If the value shared by a component is specific to that component and its childre
 
 <Divider />
 
-**Question 22:**
+**Question 25:**
 
 Here we have a set of 5 React components that is nested one inside other. Component `A` is passing a value to component `E` through prop-drilling.
 
@@ -775,7 +868,7 @@ export default A;
 
 ## Performance
 
-**Question 23:**
+**Question 26:**
 
 How to measure performance of a React application?
 
@@ -789,7 +882,7 @@ One way to measure the performance of a React component is by using **Profiler**
 
 ## Tools
 
-**Question 24:**
+**Question 27:**
 
 For a React project, will you choose Webpack or Parcel?
 
@@ -831,7 +924,7 @@ Parcel is a great starter for development, teaching or proof of concepts. In the
 
 <Divider />
 
-**Question 25:**
+**Question 28:**
 
 You are going to initialize your React project as a Git repository. What all files or folders you usually add to your `.gitignore` file?
 
@@ -886,7 +979,7 @@ Other informations we might add to `.gitignore` are changelogs, snapshots or bui
 
 <Divider />
 
-**Question 26:**
+**Question 29:**
 
 Which of the following `import` techniques is better for performance and why?
 

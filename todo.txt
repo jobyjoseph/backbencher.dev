@@ -1,4 +1,3 @@
-- Try buy me a coffee once visitors touch 1k per day
-- Add context interview questions to React
-- Add buy me a coffee link below logo in mobile devices
-- Add profile box
+- ebook for amazon publishing when interview question number reaches 50. Here is a helper tutorial: https://cmichel.io/how-to-create-beautiful-epub-programming-ebooks/
+
+- https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks NEXT
