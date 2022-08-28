@@ -1,3 +1,5 @@
 - ebook for amazon publishing when interview question number reaches 50. Here is a helper tutorial: https://cmichel.io/how-to-create-beautiful-epub-programming-ebooks/
 
-- https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks NEXT
+- https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks React NEXT
+
+- https://nextjs.org/docs/getting-started#manual-setup - Nextjs next

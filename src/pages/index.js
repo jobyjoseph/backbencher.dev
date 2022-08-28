@@ -4,12 +4,11 @@ import Layout from "../components/layout";
 import * as styles from "../styles/index.module.scss";
 
 const IndexPage = ({ data }) => {
-  const articleCount = data.allMdx.nodes.length;
   return (
     <Layout title="React.js | JavaScript | Next.js | Web Articles">
       <h1 className={styles.mainHeader}>All Articles</h1>
       {data.allMdx.nodes.map(({ frontmatter }, index) => (
-        <div className={styles.item}>
+        <div className={styles.item} key={index}>
           <Link to={`/articles/${frontmatter.slug}`}>
             {`${frontmatter.title}`}
           </Link>
