@@ -9,6 +9,23 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          allMdx{
+            nodes {
+              frontmatter{
+                title
+                date
+              }
+            }
+          }
+        }
+        `,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/articles`,
