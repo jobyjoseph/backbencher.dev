@@ -7,22 +7,50 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
         query: `
         {
-          allMdx{
+          allSitePage {
             nodes {
-              frontmatter{
-                title
+              path
+            }
+          }
+          allMdx {
+            nodes {
+              frontmatter {
                 date
+                slug
               }
             }
           }
         }
-        `,
+      `,
+        resolveSiteUrl: () => `https://backbencher.dev`,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allMdx: { nodes: allMdxNodes },
+        }) => {
+          const mdxNodeMap = allMdxNodes.reduce((acc, node) => {
+            const {
+              frontmatter: { slug },
+            } = node;
+            acc[`/articles/${slug}`] = node;
+
+            return acc;
+          }, {});
+
+          return allPages.map((page) => {
+            return { ...page, ...mdxNodeMap[page.path] };
+          });
+        },
+        serialize: ({ path, frontmatter }) => {
+          return {
+            url: path,
+            lastmod: frontmatter?.date,
+          };
+        },
       },
     },
     {
