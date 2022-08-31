@@ -6,3 +6,4 @@ Pages to Read
 =============
 1. https://frontendmasters.com/courses/tour-js-patterns/
 2. https://portal.gitnation.org/contents/future-features-of-js
+3. https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
