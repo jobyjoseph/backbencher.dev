@@ -27,7 +27,6 @@ const IndexPage = ({ data }) => {
     <Layout title="React.js | JavaScript | Next.js | Web Articles">
       {data.allMdx.nodes.map(({ frontmatter }, index) => {
         let showDateHeader = false;
-        const tag = frontmatter.tags;
         const date = new Date(frontmatter?.date);
         const dateHeader = `${months[date.getMonth()]} ${date.getFullYear()}`;
         if (!groups.includes(dateHeader)) {
@@ -48,14 +47,6 @@ const IndexPage = ({ data }) => {
                 <Link to={`/articles/${frontmatter.slug}`}>
                   {`${frontmatter.title}`}
                 </Link>
-                <span className={styles.tagContainer}>
-                  <span
-                    className={styles.tag}
-                    style={{ color: config[tag]?.color }}
-                  >
-                    {config[tag]?.title}
-                  </span>
-                </span>
               </div>
             </div>
           </>
@@ -75,7 +66,6 @@ export const query = graphql`
           title
           date(formatString: "D MMM, YY")
           slug
-          tags
         }
       }
     }

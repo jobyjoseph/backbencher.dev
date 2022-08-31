@@ -1,3 +1,7 @@
+Next to Read
+============
+https://www.joshwcomeau.com/react/usememo-and-usecallback/
+
 Sites to Follow
 ===============
 1. https://tc39er.us/
@@ -7,3 +11,7 @@ Pages to Read
 1. https://frontendmasters.com/courses/tour-js-patterns/
 2. https://portal.gitnation.org/contents/future-features-of-js
 3. https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
+4. https://www.joshwcomeau.com/react/usememo-and-usecallback/
+
+Updated Sitemap file on Aug 31st. Waiting for React interview questions to refresh. Google query:
+site:backbencher.dev react interview questions
