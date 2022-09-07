@@ -2,7 +2,6 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import * as styles from "../styles/index.module.scss";
-import * as config from "../config/tags";
 
 const IndexPage = ({ data }) => {
   const months = {
