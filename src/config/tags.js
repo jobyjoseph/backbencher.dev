@@ -7,6 +7,10 @@ module.exports = {
     title: "JavaScript",
     color: "#AD1457",
   },
+  java: {
+    title: "Java",
+    color: "#6A1B9A",
+  },
   deno: {
     title: "Deno",
     color: "#6A1B9A",
