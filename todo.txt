@@ -3,3 +3,5 @@
 - https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks React NEXT
 
 - https://nextjs.org/docs/getting-started#manual-setup - Nextjs next
+
+- https://litmus7.udemy.com/course/the-complete-java-development-bootcamp/learn/lecture/24121416#overview - Java next
