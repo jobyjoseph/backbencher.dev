@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
-import ProfileBox from "../profile-box";
 
 const Layout = ({ children, title, description }) => {
   return (
@@ -21,9 +20,7 @@ const Layout = ({ children, title, description }) => {
         <main>
           <div className="container">
             <div className="contentArea">{children}</div>
-            <div className="sidebar">
-              <ProfileBox />
-            </div>
+            <div className="sidebar"></div>
           </div>
         </main>
       </div>
