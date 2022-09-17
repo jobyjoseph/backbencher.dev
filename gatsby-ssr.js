@@ -8,3 +8,10 @@ const HeadComponents = [
     key="1"
   />,
 ];
+
+exports.onRenderBody = (
+  { setHeadComponents, setPostBodyComponents },
+  pluginOptions
+) => {
+  setHeadComponents(HeadComponents);
+};
