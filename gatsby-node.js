@@ -1,7 +1,7 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(filter: { frontmatter: { type: { ne: "tutorial" } } }) {
         nodes {
           frontmatter {
             title
@@ -55,6 +55,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+      },
+    });
+  });
+
+  // Tutorials
+
+  const tutorialsQueryResponse = await graphql(`
+    query {
+      allMdx(filter: { frontmatter: { type: { eq: "tutorial" } } }) {
+        nodes {
+          frontmatter {
+            slug
+            topic
+          }
+        }
+      }
+    }
+  `);
+
+  const tutorials = tutorialsQueryResponse.data.allMdx.nodes;
+
+  tutorials.forEach(({ frontmatter: { slug, topic } }) => {
+    actions.createPage({
+      path: `${topic}/${slug}`,
+      component: require.resolve("./src/templates/tutorial.js"),
+      context: {
+        slug,
+        topic,
       },
     });
   });

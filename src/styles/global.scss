@@ -1,12 +1,10 @@
 html,
 body {
-  font-family: "Lora", serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
   line-height: 1.9;
-  background: #eeeeee;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000;
   font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
@@ -17,31 +15,32 @@ body {
 h1,
 h2 {
   margin: 0;
-}
-h1 {
-  font-size: 300%;
   line-height: 1.2;
 }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
 h2 {
-  font-size: 230%;
+  font-size: 1.8rem;
   margin: 1em 0 0.75em;
   line-height: 1.02;
 
   code {
-    font-size: 30px;
+    font-size: 1.8rem;
   }
 }
 h3 {
-  font-size: 180%;
+  font-size: 1.5rem;
   margin: 1em 0 0.5em;
 }
 h4 {
-  font-size: 140%;
+  font-size: 1.3rem;
   margin: 1.5em 0 0.5em;
 }
 
 h5 {
-  font-size: 110%;
+  font-size: 1.1rem;
   margin: 1em 0 0;
 }
 
@@ -102,27 +101,20 @@ table {
 
 /*** Container ***/
 .container {
-  max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
   margin: auto;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 768px) {
-    padding: 0 15px;
+  @media screen and (min-width: 769px) {
+    padding: 0 4rem;
     flex-direction: row;
   }
-}
 
-.sidebar {
-  flex: 1 1 100%;
-  padding: 20px;
-
-  @media screen and (min-width: 768px) {
-    margin-left: 60px;
-    flex: 0 0 300px;
-    padding: 0;
+  @media screen and (min-width: 1367px) {
+    padding: 0 6rem;
   }
 }
 
@@ -134,84 +126,16 @@ table {
   min-width: 0;
   overflow: auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     padding: 60px;
     box-shadow: 0 0 3px #aaa;
   }
 }
 
-.contentBox {
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 3px #aaa;
-  box-sizing: border-box;
-  width: 100%;
-
-  @media screen and (min-width: 768px) {
-    padding: 60px;
-  }
-
-  .topBanner {
-    margin-bottom: 10px;
-  }
-
-  .homeGrid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-
-    .homeBox {
-      flex: 0 0 100%;
-      font-family: "Source Sans Pro", sans-serif;
-
-      img {
-        box-shadow: 0 1px 1px #999;
-      }
-
-      @media screen and (min-width: 768px) {
-        flex: 0 0 33.3333%;
-      }
-
-      h5 {
-        margin-bottom: 0;
-        margin-top: 0;
-      }
-
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-}
-
 /*** Links ***/
 a {
-  color: #1e88e5;
+  color: #333;
   text-decoration: none;
-}
-
-/*** 2 col grid ***/
-.grid-2 {
-  display: flex;
-
-  .col-1 {
-    width: 250px;
-    box-sizing: border-box;
-    border-right: 1px solid #f4f4f4;
-    padding-right: 15px;
-  }
-
-  .col-2 {
-    flex: 1;
-    box-sizing: border-box;
-    padding-left: 30px;
-  }
 }
 
 .sidebarMenu {
@@ -290,4 +214,8 @@ pre[class*="language-"] {
 .inArticleAdContainer {
   padding-top: 50px;
   padding-bottom: 20px;
+}
+
+.header-internal-link {
+  margin-left: 0.2rem;
 }

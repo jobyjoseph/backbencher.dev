@@ -8,6 +8,7 @@ import TagBadge from "../components/tagbadge";
 export const query = graphql`
   query GetArticles($skip: Int!, $limit: Int!) {
     allMdx(
+      filter: { frontmatter: { type: { ne: "tutorial" } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip

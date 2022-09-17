@@ -1,0 +1,37 @@
+.topicTitle {
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: auto;
+    height: 40px;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+.sectionLinks {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  list-style-type: none;
+  line-height: 1.4;
+
+  li {
+    margin-top: 0.5rem;
+
+    a {
+      color: #444;
+    }
+  }
+}
