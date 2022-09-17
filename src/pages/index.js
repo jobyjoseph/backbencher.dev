@@ -9,16 +9,14 @@ const IndexPage = ({ data }) => {
       <h1 className={styles.homeTitle}>Latest Articles</h1>
       {data.allMdx.nodes.map(({ frontmatter }, index) => {
         return (
-          <>
-            <div className={styles.item} key={index}>
-              <div>
-                <Link to={`/articles/${frontmatter.slug}`}>
-                  {`${frontmatter.title}`}
-                </Link>{" "}
-              </div>
-              <div className={styles.date}>{frontmatter.date}</div>
+          <div className={styles.item} key={index}>
+            <div>
+              <Link to={`/articles/${frontmatter.slug}`}>
+                {`${frontmatter.title}`}
+              </Link>{" "}
             </div>
-          </>
+            <div className={styles.date}>{frontmatter.date}</div>
+          </div>
         );
       })}
     </Layout>
