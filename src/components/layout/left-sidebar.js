@@ -4,20 +4,21 @@ import topics from "../../config/topics";
 import { StaticQuery, graphql, Link } from "gatsby";
 import DefaultLeftSidebar from "./default-left-sidebar";
 
-export function SectionArticles({ topic, section }) {
+export function SectionArticles({ topic, section, slug }) {
   return (
     <StaticQuery
       query={graphql`
         query SectionArticlesQuery {
-          allMdx(sort: { fields: [frontmatter___order], order: [ASC] }) {
+          allMdx(filter: { frontmatter: { type: { eq: "tutorial" } } }) {
             edges {
               node {
                 id
                 frontmatter {
                   title
+                  shortTitle
                   slug
                   tags
-                  order
+                  sortorder
                   section
                   topic
                 }
@@ -26,24 +27,40 @@ export function SectionArticles({ topic, section }) {
           }
         }
       `}
-      render={(data) => (
-        <ul className={styles.sectionLinks}>
-          {data.allMdx.edges.map((edge) => {
-            if (
-              edge.node.frontmatter.section === section &&
-              edge.node.frontmatter.topic === topic
-            ) {
-              return (
-                <li key={edge.node.id}>
-                  <Link to={`/${topic}/${edge.node.frontmatter.slug}`}>
-                    {edge.node.frontmatter.title}
-                  </Link>
-                </li>
-              );
-            }
-          })}
-        </ul>
-      )}
+      render={(data) => {
+        data.allMdx.edges.sort((a, b) => {
+          if (a.node.frontmatter.sortorder > b.node.frontmatter.sortorder)
+            return 1;
+          if (a.node.frontmatter.sortorder < b.node.frontmatter.sortorder)
+            return -1;
+          return 0;
+        });
+        return (
+          <ul className={styles.sectionLinks}>
+            {data.allMdx.edges.map((edge) => {
+              if (
+                edge.node.frontmatter.section === section &&
+                edge.node.frontmatter.topic === topic
+              ) {
+                return (
+                  <li
+                    key={edge.node.id}
+                    style={{
+                      fontWeight:
+                        edge.node.frontmatter.slug === slug ? "700" : "400",
+                    }}
+                  >
+                    <Link to={`/${topic}/${edge.node.frontmatter.slug}`}>
+                      {edge.node.frontmatter.shortTitle ||
+                        edge.node.frontmatter.title}
+                    </Link>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        );
+      }}
     />
   );
 }
@@ -62,7 +79,11 @@ export default function LeftSidebar(props) {
             return (
               <div key={section.key}>
                 <div className={styles.sectionTitle}>{section.title}</div>
-                <SectionArticles section={section.key} topic={props.topic} />
+                <SectionArticles
+                  section={section.key}
+                  topic={props.topic}
+                  slug={props.slug}
+                />
               </div>
             );
           })}

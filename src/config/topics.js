@@ -9,8 +9,16 @@ module.exports = {
         title: "Getting Started",
       },
       {
+        key: "lexical-structure",
+        title: "Lexical Structure",
+      },
+      {
         key: "basics",
         title: "Basics",
+      },
+      {
+        key: "arrays",
+        title: "Arrays",
       },
     ],
   },

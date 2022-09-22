@@ -16,7 +16,7 @@ import LeftSidebar from "./left-sidebar";
 import TableOfContents from "../table-of-contents";
 import topics from "../../config/topics";
 
-const Layout = ({ children, title, description, topic, headings }) => {
+const Layout = ({ children, title, description, topic, headings, slug }) => {
   let updatedTitle = topic ? `${title} | ${topics[topic].title}` : title;
   return (
     <>
@@ -25,7 +25,7 @@ const Layout = ({ children, title, description, topic, headings }) => {
 
       <div className={styles.container}>
         <div className={styles.leftSidebar}>
-          <LeftSidebar topic={topic} />
+          <LeftSidebar topic={topic} slug={slug} />
           <br />
           <br />
           <div className={styles.adContainer}>

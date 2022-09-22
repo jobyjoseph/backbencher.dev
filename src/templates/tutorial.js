@@ -28,6 +28,7 @@ const TutorialTemplate = ({ data: { mdx: article } }) => (
     description={article.frontmatter.description}
     topic={article.frontmatter.topic}
     headings={article.headings}
+    slug={article.frontmatter.slug}
   >
     <h1>{article.frontmatter.title}</h1>
     <MDXRenderer>{article.body}</MDXRenderer>
