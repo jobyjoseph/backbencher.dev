@@ -13,36 +13,16 @@ module.exports = {
         title: "Lexical Structure",
       },
       {
+        key: "types",
+        title: "Types",
+      },
+      {
         key: "basics",
         title: "Basics",
       },
       {
         key: "arrays",
         title: "Arrays",
-      },
-    ],
-  },
-  nextjs: {
-    title: "Next.js",
-    description: "A React framework for isomorphic applications",
-    landingPage: "/nextjs/nodejs-version",
-    image: "nodejs.jpg",
-    sections: [
-      {
-        key: "getting-started",
-        title: "Getting Started",
-      },
-      {
-        key: "pages",
-        title: "Pages",
-      },
-      {
-        key: "data-fetching",
-        title: "Data Fetching",
-      },
-      {
-        key: "advanced-features",
-        title: "Advanced Features",
       },
     ],
   },
