@@ -15,6 +15,10 @@ export const query = graphql`
         tags
       }
       body
+      headings {
+        depth
+        value
+      }
     }
   }
 `;
@@ -23,6 +27,7 @@ const PostTemplate = ({ data: { mdx: article } }) => (
   <Layout
     title={article.frontmatter.title}
     description={article.frontmatter.description}
+    headings={article.headings}
   >
     <h1>{article.frontmatter.title}</h1>
     <div>

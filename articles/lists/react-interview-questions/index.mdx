@@ -16,18 +16,7 @@ The questions and their solutions provided here are more realistic and practical
 
 > This article is a work in progress. I am re-organizing the existing article and adding more questions in these days.
 
-## Contents
-
-- [Basics](#basics)
-- [Hooks](#hooks)
-  - [useState()](#usestate-hook)
-  - [useEffect()](#useeffect-hook)
-  - [useContext()](#usecontext-hook)
-  - [useRef()](#useref-hook)
-- [Performance](#performance)
-- [Tools](#tools)
-
-<h2 id="basics">Basics</h2>
+## Basics
 
 This section covers basics of React. Most of the questions are suitable for a Junior React developer role. In addition to direct project related questions, we discuss about some concepts, mainly to check, how in-depth a candidate has tried to understand React.
 
@@ -318,7 +307,7 @@ That is why we could read the `props` property and display the value. Due to the
 
 <Divider />
 
-<h2 id="hooks">Hooks</h2>
+## Hooks
 
 **Question 11:**
 
@@ -356,7 +345,7 @@ Fourth reason is, in a complex class component, related code are scattered in di
 
 <Divider />
 
-<h3 id="usestate-hook">useState()</h3>
+### useState()
 
 **Question 14:**
 
@@ -606,7 +595,7 @@ When state variable is an object, `setState()` in class components automatically
 
 <Divider />
 
-<h3 id="useeffect-hook">useEffect()</h3>
+### useEffect()
 
 **Question 19:**
 
@@ -804,7 +793,7 @@ useEffect(() => {
 
 <Divider />
 
-<h3 id="usecontext-hook">useContext()</h3>
+### useContext()
 
 **Question 24:**
 
@@ -867,7 +856,7 @@ export default A;
 
 <Divider />
 
-<h2 id="useref-hook">useRef()</h2>
+### useRef()
 
 **Question 26:**
 
@@ -967,7 +956,7 @@ Each time when the `Child` component is rendered, we can see the ref count getti
 
 The double rendering on each button click is due to React running in development mode.
 
-<h2 id="performance">Performance</h2>
+## Performance
 
 **Question 28:**
 
@@ -978,8 +967,6 @@ How to measure performance of a React application?
 One way to measure the performance of a React component is by using **Profiler**.
 
 <Divider />
-
-<div id="tools" />
 
 ## Tools
 
@@ -993,7 +980,7 @@ Webpack and Parcel are two tools to bundle files in a React project. We are tryi
 
 > For busy readers, if you are building a big React project or needs to suggest a bundler for an upcoming big project, Webpack is the choice.
 
-##### Zero Configuration
+**Zero Configuration**
 
 The main highlight of **Parcel** bundler is that we can start using Parcel just like that. No configurations are required. But, from Webpack 5 onwards, we can use Webpack also with zero configuration.
 
@@ -1001,13 +988,13 @@ Typically there will be a `webpack.config.js` Webpack config file in a project. 
 
 So regarding configuration, both are good and easy to start. But as more and more customiztion is required in the bundle, we need to go with Webpack.
 
-##### Code-Splitting
+**Code-Splitting**
 
 Both performs code splitting. But, Parcel throws out all the output files to a single folder. So sometimes the output folder is a big mess of CSS, JS and html files.
 
 On the other hand, we can tell Webpack to group CSS, JS, Images or HTML to separate folders and keep the project more structured.
 
-##### Bundling Speed
+**Bundling Speed**
 
 Parcel is slow for the first build. Then it picks up.
 
@@ -1015,7 +1002,7 @@ Webpack takes more time based on the configurations we write.
 
 Both tools support live hot reload in their own way.
 
-##### Community Support
+**Community Support**
 
 That is everything for a serious project. If something goes wrong, there should be a strong community to support. Webpack is a clear winner there.
 
@@ -1033,27 +1020,27 @@ You are going to initialize your React project as a Git repository. What all fil
 
 Files or folders added in `.gitignore` file are avoided by Git while tracking. For a typical React project we add following files or folders in `.gitignore`.
 
-##### node_modules
+**node_modules**
 
 Like any other Node projects, we ignore `node_modules/` directory. Including `node_modules` directory increases the project size to a large extend. Other than the size, it is always good to install the packages from `package.json` if a new developer is cloning the project.
 
-##### coverage
+**coverage**
 
 When we implement code coverage in our project, all the reports are stored in `coverage/` folder. We do not want that to be uploaded to Git server.
 
-##### DS_Store
+**DS_Store**
 
 Mac OS creates this file in every folder if we open that folder in `Finder`. DS_Store stands for Desktop Services Store. The file basically stores information about the current folder and other files around it. It does not have any signifance specific to our React project.
 
-##### Distribution
+**Distribution**
 
 `dist/` is the name of a typical directory used to store distribution files. That is the common naming convention. If your project has another name for output folder, give that name in `.gitignore`.
 
-##### IDE Specific
+**IDE Specific**
 
 If we are working in Visual Studio Code, it automatically creates a `.vscode` directory to store the project settings. Other editors like _Sublime Text_ has its own versions of settings file. We can exclude those files or directories from versioning.
 
-##### Logs
+**Logs**
 
 Any logs or directories that contains just log information can be ignored. That folder will keep on getting larger and its totally unnecesary to include it in versioning.
 

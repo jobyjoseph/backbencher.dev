@@ -10,6 +10,11 @@ export default function DefaultLeftSidebar() {
         <h3>Top Articles</h3>
         <ul>
           <li>
+            <a href="/articles/react-interview-questions">
+              <u>31 React Interview Questions and Answers for 2022</u>
+            </a>
+          </li>
+          <li>
             <a href="/articles/html-boilerplate-code-visual-studio-code">
               How To Easily Write HTML5 Boilerplate Code In Visual Studio Code
             </a>
