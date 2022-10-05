@@ -307,6 +307,61 @@ That is why we could read the `props` property and display the value. Due to the
 
 <Divider />
 
+**Question 11:**
+
+I have two components `<WildAnimals />` and `<DomesticAnimals />`. If the value of `isWildAnimal` is `true`, I need to render `<WildAnimals />`. Or else, I need to render `<DomesticAnimals />`. In what all ways I can implement that in JSX?
+
+**Answer: **
+
+One way is to use `if..else`. When using `if..else`, the condition statement should be outside JSX because JSX can contain only expressions, not statements.
+
+```javascript
+let componentToRender = <DomesticAnimals />;
+if (isWildAnimal) {
+  componentToRender = <WildAnimals />;
+}
+```
+
+Other technique is to use _ternary_ operator. Since using ternary operator is an expression, we can directly use inside JSX.
+
+```javascript
+<div className="App">
+  {isWildAnimal ? <WildAnimals /> : <DomesticAnimals />}
+</div>
+```
+
+<Divider />
+
+**Question 12:**
+
+We have a component `<WildAnimals />`. We need to show it only if `isWildAnimal` is `true`. How can we put that condition in JSX?
+
+**Answer:**
+
+One way is to use `if` condition. `if` condition needs to be outside JSX. So the code would look like:
+
+```javascript
+let wildAnimalComponent = null;
+if (isWildAnimal) {
+  wildAnimalComponent = <WildAnimals />;
+}
+return <div className="App">{wildAnimalComponent}</div>;
+```
+
+Another way is to use ternary operator:
+
+```javascript
+return <div className="App">{isWildAnimal ? <WildAnimals /> : null}</div>;
+```
+
+Last way and the normally used one in this case is to use logical AND operator. In JavaScript, in an `AND` operation, the operand that **decides the result of expression** is returned. Using that behaviour, we can write the JSX code as follows:
+
+```javascript
+return <div className="App">{isWildAnimal && <WildAnimals />}</div>;
+```
+
+<Divider />
+
 ## Hooks
 
 **Question 11:**
