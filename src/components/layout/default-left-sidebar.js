@@ -11,7 +11,7 @@ export default function DefaultLeftSidebar() {
         <ul>
           <li>
             <a href="/articles/react-interview-questions">
-              <u>31 React Interview Questions and Answers for 2022</u>
+              <u>34 React Interview Questions and Answers for 2022</u>
             </a>
           </li>
           <li>

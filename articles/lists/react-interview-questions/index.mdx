@@ -1,6 +1,6 @@
 ---
-title: "31 React Interview Questions and Answers for 2022"
-date: 2022-09-05
+title: "34 React Interview Questions and Answers for 2022"
+date: 2022-10-05
 slug: react-interview-questions
 description: "React is the preferred library in most of the web projects. Most of the projects which I come across follows either React directly or some other flavors of React like Next.js or Gatsby. Therefore, it is important to know different capabilities of React."
 tags: ["react"]
@@ -362,9 +362,45 @@ return <div className="App">{isWildAnimal && <WildAnimals />}</div>;
 
 <Divider />
 
+**Question 13:**
+
+Here we have a React component:
+
+```javascript
+<Banner>
+  <img src="hero.png" />
+  <caption>Good product</caption>
+</Banner>
+```
+
+When the above component renders, it should render below HTML:
+
+```html
+<div class="banner">
+  <img src="hero.png" />
+  <caption>
+    Good product
+  </caption>
+</div>
+```
+
+Please write down the code for `<Banner />` component.
+
+**Answer:**
+
+Here, we are passing the content for `Banner` component as `children`. Any content inside a component is passed to the component as `props`. We can retrieve the children from `props` using `props.children`. Here is the code for `Banner` component.
+
+```javascript
+function Banner({ children }) {
+  return <div className="banner">{children}</div>;
+}
+```
+
+<Divider />
+
 ## Hooks
 
-**Question 11:**
+**Question 14:**
 
 What are hooks in React?
 
@@ -374,7 +410,7 @@ Hooks was introduced in React v16.8. It allows to use all React features without
 
 <Divider />
 
-**Question 12:**
+**Question 15:**
 
 Will React hooks work inside class components?
 
@@ -384,7 +420,7 @@ No. Hooks will work only inside functional components.
 
 <Divider />
 
-**Question 13:**
+**Question 16:**
 
 Why React hooks was introduced?
 
@@ -402,7 +438,7 @@ Fourth reason is, in a complex class component, related code are scattered in di
 
 ### useState()
 
-**Question 14:**
+**Question 17:**
 
 How `useState` hook works? What is/are the arguments accepted by this hook and what is returned by the hook?
 
@@ -424,7 +460,7 @@ const [currentStateValue, functionToUpdateState] = useState(initialStateValue);
 
 <Divider />
 
-**Question 15:**
+**Question 18:**
 
 Here we have a class component with a state value. Each time the button in component is clicked, the count is incremented.
 
@@ -476,7 +512,7 @@ function Counter() {
 
 <Divider />
 
-**Question 16:**
+**Question 19:**
 
 Below we have a class component. It contains code to update the state based on previous state value.
 
@@ -550,7 +586,7 @@ function Counter() {
 
 <Divider />
 
-**Question 17:**
+**Question 20:**
 
 Here we have class component that updates the state using the input from a form.
 
@@ -638,7 +674,7 @@ Here we are merging object properties with the help of JavaScript spread operato
 
 <Divider />
 
-**Question 18:**
+**Question 21:**
 
 What are the differences in using hooks and class components with respect to state management?
 
@@ -652,7 +688,7 @@ When state variable is an object, `setState()` in class components automatically
 
 ### useEffect()
 
-**Question 19:**
+**Question 22:**
 
 What is the purpose of `useEffect` hook?
 
@@ -662,7 +698,7 @@ The Effect hook lets us to perform side effects in functional components. It hel
 
 <Divider />
 
-**Question 20:**
+**Question 23:**
 
 Here is a class component that prints _Boom_ in console whenever it is mounted or updated.
 
@@ -728,7 +764,7 @@ function Banner() {
 
 <Divider />
 
-**Question 21:**
+**Question 24:**
 
 Understand the code below:
 
@@ -770,7 +806,7 @@ useEffect(() => {
 
 <Divider />
 
-**Question 22:**
+**Question 25:**
 
 We have got a class component that updates time every second. It uses `componentDidMount()` to set the timer.
 
@@ -818,7 +854,7 @@ function Clock() {
 
 <Divider />
 
-**Question 23:**
+**Question 26:**
 
 We have a code snippet from a class component which registers and remove an event listener.
 
@@ -850,7 +886,7 @@ useEffect(() => {
 
 ### useContext()
 
-**Question 24:**
+**Question 27:**
 
 When should we use React Context instead of prop-drilling?
 
@@ -868,7 +904,7 @@ If the value shared by a component is specific to that component and its childre
 
 <Divider />
 
-**Question 25:**
+**Question 28:**
 
 Here we have a set of 5 React components that is nested one inside other. Component `A` is passing a value to component `E` through prop-drilling.
 
@@ -913,7 +949,7 @@ export default A;
 
 ### useRef()
 
-**Question 26:**
+**Question 29:**
 
 What is the common application of `useRef()` hook? Explain the implementation.
 
@@ -953,7 +989,7 @@ export default function DOM() {
 
 <Divider />
 
-**Question 27:**
+**Question 30:**
 
 Other than accessing DOM elements using `ref` attribute, is there any other use for `useRef()`?
 
@@ -1013,7 +1049,7 @@ The double rendering on each button click is due to React running in development
 
 ## Performance
 
-**Question 28:**
+**Question 31:**
 
 How to measure performance of a React application?
 
@@ -1025,7 +1061,7 @@ One way to measure the performance of a React component is by using **Profiler**
 
 ## Tools
 
-**Question 29:**
+**Question 32:**
 
 For a React project, will you choose Webpack or Parcel?
 
@@ -1067,7 +1103,7 @@ Parcel is a great starter for development, teaching or proof of concepts. In the
 
 <Divider />
 
-**Question 30:**
+**Question 33:**
 
 You are going to initialize your React project as a Git repository. What all files or folders you usually add to your `.gitignore` file?
 
@@ -1122,7 +1158,7 @@ Other informations we might add to `.gitignore` are changelogs, snapshots or bui
 
 <Divider />
 
-**Question 31:**
+**Question 34:**
 
 Which of the following `import` techniques is better for performance and why?
 
