@@ -13,6 +13,10 @@ import imgTermsConditions from "./images/terms-conditions.png";
 import imgPaymentComplete from "./images/registration-complete.png";
 import imgPublisherDetails from "./images/publisher-details.png";
 import imgExtensionParsed from "./images/parsed-extension.png";
+import imgPrivacyPolicies from "./images/privacy-policies.png";
+import imgSubmitForReview from "./images/submit-for-review.png";
+import imgEmail from "./images/email.png";
+import imgExtensionPage from "./images/extension-page.png";
 
 <Olink link="https://chrome.google.com/webstore/category/extensions">
   Google web store
@@ -76,3 +80,33 @@ If everything went well, Google reads the information in our extension manifest 
 Fill all the required and optional fields you like. For **Store Icon**, we can provide the same icon used in the extension of size 128x128.
 
 For screenshot, you can take the screenshot of your extension and make it to a proper size. I took mine and cropped it to 640x400 using photoshop.
+
+After filling all the details in the page, save the changes.
+
+Then move to _Privacy Practices_ page. Fill out the single purpose and permission justification. Then save the changes.
+
+<Image src={imgPrivacyPolicies} alt="Extension details page" />
+
+After completing above steps, we can see the **Submit For Review** button enabled.
+
+<Image
+  src={imgSubmitForReview}
+  alt="Submit for review"
+  style={{ maxWidth: "500px" }}
+/>
+
+Click the review button. Click ok in the subsequent confirmation windows.
+
+The extension is now submitted for review.
+
+## Review and Publishing
+
+If the permissions requested are less, the approval will be faster. My extension did not have any permission requests. It got approved in 2 days. Once the extension is approved, we will receive a mail like below:
+
+<Image src={imgEmail} alt="Published Mail" style={{ maxWidth: "500px" }} />
+
+We can view our published extension by clicking the link in the mail.
+
+<Image src={imgExtensionPage} alt="Extension page" />
+
+Good luck with publishing your extension!
