@@ -102,20 +102,11 @@ table {
 /*** Container ***/
 .container {
   width: 100%;
-  box-sizing: border-box;
   margin: auto;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-
-  @media screen and (min-width: 769px) {
-    padding: 0 4rem;
-    flex-direction: row;
-  }
-
-  @media screen and (min-width: 1367px) {
-    padding: 0 6rem;
-  }
+  max-width: 680px;
 }
 
 .contentArea {

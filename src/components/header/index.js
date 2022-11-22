@@ -10,14 +10,6 @@ const Header = () => (
         <img src={logo} alt="Backbencher.dev" className={styles.logo} />
         <span className={styles.logoText}>Backbencher.dev</span>
       </Link>
-      <ul className={styles.primaryMenu}>
-        <li>
-          <Link to="/javascript/introduction">JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/articles">Articles</Link>
-        </li>
-      </ul>
     </div>
   </header>
 );

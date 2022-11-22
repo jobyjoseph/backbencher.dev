@@ -2,18 +2,8 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
-  @media screen and (min-width: 821px) {
-    display: flex;
-    padding: 3rem 4rem;
-    flex-direction: row;
-  }
-
-  @media screen and (min-width: 1367px) {
-    display: flex;
-    padding: 3rem 6rem;
-    flex-direction: row;
-  }
+  max-width: 680px;
+  margin: auto;
 
   .leftSidebar {
     flex: 0 0 100%;
