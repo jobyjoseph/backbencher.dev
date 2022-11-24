@@ -9,7 +9,6 @@ function TagBadge({ tags }) {
         {tags.map((ele, index) => {
           return (
             <span
-              style={{ backgroundColor: tagsConfig[ele].color }}
               className={styles.tag}
               key={index}
             >

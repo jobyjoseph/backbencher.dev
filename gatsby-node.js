@@ -34,7 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create article pages
   articles.forEach((article) => {
     actions.createPage({
-      path: `articles/${article.frontmatter.slug}`,
+      path: `${article.frontmatter.slug}`,
       component: require.resolve("./src/templates/article.js"),
       context: {
         slug: article.frontmatter.slug,
@@ -48,7 +48,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const numPages = Math.ceil(articles.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     actions.createPage({
-      path: i === 0 ? `/articles` : `/articles/${i + 1}`,
+      path: i === 0 ? `/` : `/${i + 1}`,
       component: require.resolve("./src/templates/articles.js"),
       context: {
         limit: postsPerPage,

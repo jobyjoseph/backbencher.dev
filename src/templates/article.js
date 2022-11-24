@@ -36,7 +36,9 @@ const PostTemplate = ({ data: { mdx: article } }) => (
     <div className={styles.articleBody}>
       <MDXRenderer>{article.body}</MDXRenderer>
     </div>
-    <RelatedArticles tag={article.frontmatter.tags[0]} />
+    <div className={styles.bottomLine}>
+      --- ○ ---
+    </div>
   </Layout>
 );
 

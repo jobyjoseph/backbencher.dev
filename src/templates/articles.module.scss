@@ -1,6 +1,4 @@
 .item {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 30px;
   border-bottom: 1px solid #eee;
   margin-bottom: 30px;
@@ -8,26 +6,15 @@
   .linkContainer {
     flex: 1 1 auto;
     a {
-      font-size: 26px;
+      font-size: 1.8rem;
       font-weight: 700;
-      color: rgba(0, 0, 0, 0.8);
-      line-height: 1.5;
-    }
-
-    @media (min-width: 769px) {
-      margin-right: 30px;
+      color: rgba(0, 0, 0, .8);
+      line-height: 2.2rem;
     }
   }
 
   .tagContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  @media (min-width: 769px) {
-    flex-direction: row;
+    font-style: normal;
   }
 }
 

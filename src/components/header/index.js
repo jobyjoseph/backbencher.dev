@@ -8,7 +8,9 @@ const Header = () => (
     <div className="container">
       <Link to="/" className={styles.logoContainer}>
         <img src={logo} alt="Backbencher.dev" className={styles.logo} />
-        <span className={styles.logoText}>Backbencher.dev</span>
+        {
+        //<span className={styles.logoText}>Backbencher.dev</span>
+      }
       </Link>
     </div>
   </header>

@@ -31,24 +31,24 @@ const Articles = ({ data, pageContext }) => {
   const linkArray = [];
   for (let i = 0; i < numPages; i++) {
     linkArray.push({
-      path: i === 0 ? "/articles" : `/articles/${i + 1}`,
+      path: i === 0 ? "/" : `/${i + 1}`,
       text: i + 1,
     });
   }
   return (
     <Layout
-      title={currentPage === 1 ? `Articles` : `Articles | Page ${currentPage}`}
+      title={currentPage === 1 ? `Home` : `Home | Page ${currentPage}`}
     >
       {articles.map((article, index) => {
         return (
           <div className={styles.item} key={index}>
             <div className={styles.linkContainer}>
-              <Link to={`/articles/${article.frontmatter.slug}`}>
+              <Link to={`/${article.frontmatter.slug}`}>
                 {article.frontmatter.title}
               </Link>{" "}
             </div>
             <div className={styles.tagContainer}>
-              <span className={styles.date}>{article.frontmatter.date}</span>
+              <span className={styles.date}>{article.frontmatter.date} - </span>
               <TagBadge tags={article.frontmatter.tags} />
             </div>
           </div>
