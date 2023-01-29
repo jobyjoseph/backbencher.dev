@@ -8,6 +8,9 @@ tags: ["algorithms"]
 
 import Image from "../../../../src/components/image";
 import imgStack from "./images/stack.png";
+import imgMemory from "./images/memory.png";
+import imgLinkedMemory from "./images/linked-memory.png";
+import imgNode5 from "./images/node-5.png";
 
 Stack is a pile of objects. In real world, we can see stack of plates, stack of books and so on. Here, I have drawn a stack of 5 books:
 
@@ -20,3 +23,70 @@ Book 5 is on top and Book 1 is at the bottom.
 In a stack, the last book kept(Book 5), is taken first. We cannot take Book 4 without first taking(popping) Book 5.
 
 LIFO stands for _Last In First Out_.
+
+The **Last In** book(Book 5) is **First Out**.
+
+## Is Stack a Data Structure or Algorithm?
+
+Stack is considered as a Data Structure because in a stack, data follows a predefined structure.
+
+This type of structured data has its own applicatons like:
+
+- Evaluation of arithmetic expressions
+- Syntax checking of languages
+- Back tracking
+- Reversing a string
+- Processing function calls(Call Stack)
+
+## Diving In
+
+The example of stack of plates or books is good. But, bringing the concept to programming is difficult. How can I crack it?
+
+This is a major problem for most of us. Let us think about different aspects related to this problem.
+
+### Memory
+
+When I drew the stack of 5 books one on top of another, it was very pleasing and easy to visualize. But, in reality if I need to store 5 books, we cannot tell computer to store information about 5 books one top of another in memory.
+
+Memory is like a grid. There, computer stores items where there is space. So our 5 books might be stored like below in memory:
+
+<Image src={imgMemory} alt="Memory" style={{ maxWidth: "500px" }} />
+
+Oh Jeez! now what?
+
+### Perception
+
+Even though, the 5 items are scattered in memory, we need to give a perception to the user that, _item 5_ is on top _item 4_, _item 4_ is on top of _item 3_ and so on.
+
+Then only, for the user the entire structure looks like a stack.
+
+So, the top most book(**head**) is book 5. It should have a link to the **previous** book which is, book 4. Like that, there should be a link from all the books to its previous one.
+
+<Image
+  src={imgLinkedMemory}
+  alt="Linked Memory"
+  style={{ maxWidth: "500px" }}
+/>
+
+### The Node
+
+So far, we identified the items in a stack as either book or plate. We cannot go like this for ever. There should be some generic name. That is **Node**.
+
+Now onwards, we will not say that, 5 books are stored in memory. Instead, 5 **nodes** are stored in memory.
+
+Let us zoom in to one node(Say, Node 5).
+
+<Image
+  src={imgNode5}
+  alt="Node 5"
+  style={{ maxWidth: "250px" }}
+  caption="Node 5"
+/>
+
+What I am trying to convey here is, every node should have a provision to store a value. Also, it should have some mechanism to link to previous node.
+
+### Linking Nodes
+
+Ok Ok. I understood that there should be nodes and they should be linked. How?
+
+For that, we need to brush up our knowledge on how JavaScript objects are stored in memory.
