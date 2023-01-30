@@ -11,6 +11,8 @@ import imgStack from "./images/stack.png";
 import imgMemory from "./images/memory.png";
 import imgLinkedMemory from "./images/linked-memory.png";
 import imgNode5 from "./images/node-5.png";
+import imgObjectReference from "./images/object-reference.png";
+import imgCopyObjectReference from "./images/copy-object-reference.png";
 
 Stack is a pile of objects. In real world, we can see stack of plates, stack of books and so on. Here, I have drawn a stack of 5 books:
 
@@ -85,8 +87,121 @@ Let us zoom in to one node(Say, Node 5).
 
 What I am trying to convey here is, every node should have a provision to store a value. Also, it should have some mechanism to link to previous node.
 
+In JavaScript, an **object** is the best way to represent a node. Let us plot node 5 as an object.
+
+```javascript
+const node5 = {
+  value: "Book 5",
+  previous: <Link to Node 4>
+}
+```
+
+Similary, `node4` will look like below:
+
+```javascript
+const node4 = {
+  value: "Book 4",
+  previous: <Link to Node 3>
+}
+```
+
+I have written `<Link to Node x>`. In reality, how can we link from one node to another node? That is discussed below.
+
 ### Linking Nodes
 
 Ok Ok. I understood that there should be nodes and they should be linked. How?
 
 For that, we need to brush up our knowledge on how JavaScript objects are stored in memory.
+
+Consider the following code in JavaScript:
+
+```javascript
+const obj = {
+  name: "Joby",
+  age: 37,
+};
+```
+
+How this object is stored in memory?
+
+Well, JavaScript engine store the object somewhere in the memory in its own way. We do not have to worry about that now. And then, the address of that memory is stored in `obj`. Technically, we say `obj` stores the reference to the object.
+
+<Image
+  src={imgObjectReference}
+  alt="Object Reference"
+  style={{ maxWidth: "500px" }}
+/>
+
+So what happens, if we copy `obj` to another variable, say `newObj`? Only the reference is copied.
+
+<Image
+  src={imgCopyObjectReference}
+  alt="Copy Object Reference"
+  style={{ maxWidth: "500px" }}
+/>
+
+Based on the gained knowledge, if there are two objects `node5` and `node4` as in previous section, they can be linked as:
+
+```javascript
+const node5 = {
+  value: "Book 5",
+  previous: node4,
+};
+```
+
+Even though, actual `node4` object is stored somewhere in memory, it's reference is now stored as the value of `previous`.
+
+We can also see that, if I can enter into `node5` and read through the values, I can enter into `node4` through `node5.previous`. That is how the link is established.
+
+## Implement Stack of 5 Nodes
+
+In real world, stack is not restricted to 5 nodes. But, since we started with 5 books or nodes, let us create a stack of 5 nodes using JavaScript.
+
+### First Node
+
+The first node stores the value of book as `"Book 1"`. Also, since it is the first node, there is no previous node. Therefore, for the first node, we set `previous` property as `undefined`. So, here is our first node:
+
+```javascript
+const node1 = {
+  value: "Book 1",
+  previous: undefined,
+};
+```
+
+### Second Node
+
+Creating second node is equivalent to keeping the second book on top of first book. For the second node, the value is `"Book 2"` and its previous node is `node1`. So, here is the second node in JavaScript:
+
+```javascript
+const node2 = {
+  value: "Book 2",
+  previous: node1,
+};
+```
+
+### Remaining Nodes
+
+In the same line, let us figure out the next 3 nodes.
+
+```javascript
+const node3 = {
+  value: "Book 3",
+  previous: node2,
+};
+
+const node4 = {
+  value: "Book 4",
+  previous: node3,
+};
+
+const node5 = {
+  value: "Book 5",
+  previous: node4,
+};
+```
+
+This excercise helped us to understand how one node links to previous node. Also, we understood the changes happening when a new node is pushed to the stack.
+
+It is now time to write the actual implementation of a stack in JavaScript.
+
+## Implementing Stack in JavaScript
