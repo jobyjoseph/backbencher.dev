@@ -205,3 +205,28 @@ This excercise helped us to understand how one node links to previous node. Also
 It is now time to write the actual implementation of a stack in JavaScript.
 
 ## Implementing Stack in JavaScript
+
+In real world, a stack needs to be dynamic. It is not like, we can place only 5 books in a stack or 10 plates in a stack. We can keep on adding new items to stack, which is called pushing. Also, we can take out items from the stack, till it is empty, which is called popping. At any time, we can also find out, which item is in the top of stack.
+
+In order to implement such a data structure, first we need a **class**.
+
+```javascript
+class Stack {
+  // TODO
+}
+```
+
+Then, at any time if we need to create a new stack, we create an instance:
+
+```javascript
+const bookStack = new Stack();
+const plateStack = new Stack();
+```
+
+### Methods in Stack
+
+We are going to support 3 methods: `push()`, `pop()` and `peek()`.
+
+We add an item to the stack using `push()`.
+
+We take out one item from stack using `pop()`
