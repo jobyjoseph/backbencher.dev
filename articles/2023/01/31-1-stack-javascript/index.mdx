@@ -13,6 +13,8 @@ import imgLinkedMemory from "./images/linked-memory.png";
 import imgNode5 from "./images/node-5.png";
 import imgObjectReference from "./images/object-reference.png";
 import imgCopyObjectReference from "./images/copy-object-reference.png";
+import imgLetterBox from "./images/letter-box.png";
+import imgFirstNode from "./images/first-node-in-memory.png";
 
 Stack is a pile of objects. In real world, we can see stack of plates, stack of books and so on. Here, I have drawn a stack of 5 books:
 
@@ -231,7 +233,7 @@ Here is the updated Class code:
 
 ```javascript
 class Stack {
-  private head;
+  #head; // highlight-line
   // TODO
 }
 ```
@@ -242,20 +244,101 @@ At any time, we need to know, how may items are there in the stack. For that, we
 
 ```javascript
 class Stack {
-  private head;
-  public length;
+  #head;
+  length; // highlight-line
   // TODO
 }
 ```
 
-### Methods in Stack
+### Constructor
 
-We are going to support 3 methods: `push()`, `pop()` and `peek()`.
+When a new stack is created using `new` operator, `head` does not point to any node. Also, the `length` of stack is `0`. We implement this logic by adding a constructor to our class.
 
-We add an item to the stack using `push()`.
+```javascript
+class Stack {
+  #head;
+  length;
 
-We take out one item from stack using `pop()`
+  // highlight-start
+  constructor() {
+    this.head = undefined;
+    this.length = 0;
+  }
+  // highlight-end
 
+  // TODO
+}
 ```
 
+### push() Method
+
+Imagine our stack looks like a letter box.
+
+<Image src={imgLetterBox} alt="Letter box" style={{ maxWidth: "400px" }} />
+
+`push()` method means, we are pushing a node through the opening. The node will go inside the stack and go to bottom.
+
+The next node, pushed to the stack sits on top of previous one.
+
+Now, let us implement `push()` method for our stack.
+
+First, the `push()` method should accept an argument to be pushed to the stack.
+
+```javascript
+class Stack {
+  #head;
+  length;
+
+  constructor() {
+    this.head = undefined;
+    this.length = 0;
+  }
+
+  // highlight-start
+  push(value) {
+    // TODO
+  }
+  // highlight-end
+
+  // TODO
+}
+```
+
+When we push the first item, we are actually creating the first node in the stack. From the diagram earlier, we know that the first item does not have a previous node link.
+
+<Image
+  src={imgFirstNode}
+  alt="First node in memory"
+  style={{ maxWidth: "500px" }}
+/>
+
+Here are the steps we need to do in a `push()`:
+
+1. Create a new node for the pushed value
+2. Set the previous node of new node to the current head
+3. Make the new node, the new head
+4. Increment the length of stack by 1
+
+```javascript
+class Stack {
+  #head;
+  length;
+
+  constructor() {
+    this.head = undefined;
+    this.length = 0;
+  }
+
+  push(value) {
+    // highlight-start
+    const node = { value };
+    node.previous = this.head;
+    this.head = node;
+
+    this.length++;
+    // highlight-end
+  }
+
+  // TODO
+}
 ```
