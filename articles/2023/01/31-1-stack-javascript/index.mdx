@@ -208,7 +208,7 @@ It is now time to write the actual implementation of a stack in JavaScript.
 
 In real world, a stack needs to be dynamic. It is not like, we can place only 5 books in a stack or 10 plates in a stack. We can keep on adding new items to stack, which is called pushing. Also, we can take out items from the stack, till it is empty, which is called popping. At any time, we can also find out, which item is in the top of stack.
 
-In order to implement such a data structure, first we need a **class**.
+In order to implement such a data structure, first we need a **class**. It's because a _class_ can create instances and can provide methods to work on the instances.
 
 ```javascript
 class Stack {
@@ -223,6 +223,31 @@ const bookStack = new Stack();
 const plateStack = new Stack();
 ```
 
+### Head
+
+By looking at a stack of books, our brain can easily identify which is the top most book. What about if the stacks of books are in a carton box? We cannot see which book is on top(**head**). We need to ask the carton box(just visualize :)), "Who is on top?" or "Who is at the head?" or "Who is the next book ready to pop?". In order to provide the answer, we need a `head` propery for the class.
+
+Here is the updated Class code:
+
+```javascript
+class Stack {
+  private head;
+  // TODO
+}
+```
+
+### Length
+
+At any time, we need to know, how may items are there in the stack. For that, we keep a public `length` property inside the Class. Here is the udpated code:
+
+```javascript
+class Stack {
+  private head;
+  public length;
+  // TODO
+}
+```
+
 ### Methods in Stack
 
 We are going to support 3 methods: `push()`, `pop()` and `peek()`.
@@ -230,3 +255,7 @@ We are going to support 3 methods: `push()`, `pop()` and `peek()`.
 We add an item to the stack using `push()`.
 
 We take out one item from stack using `pop()`
+
+```
+
+```
