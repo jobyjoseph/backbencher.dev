@@ -342,3 +342,59 @@ class Stack {
   // TODO
 }
 ```
+
+## pop() Method
+
+Pop is the opposite of push. So when we do a pop, following steps should happen:
+
+1. Shift the header to previous node
+2. Decrease length by 1
+3. Return the value of popped node
+
+It can be implemented as below:
+
+```javascript
+pop() {
+    const currentHead = this.head;
+    this.head = currentHead.previous;
+    currentHead.previous = undefined;
+    this.length && this.length--;
+    return currentHead.value;
+  }
+```
+
+## Full Class
+
+Here is the full class code:
+
+```javascript
+class Stack {
+  #head;
+  length;
+
+  constructor() {
+    this.head = undefined;
+    this.length = 0;
+  }
+
+  push(value) {
+    const node = { value };
+    node.previous = this.head;
+    this.head = node;
+
+    this.length++;
+  }
+
+  pop() {
+    const currentHead = this.head;
+    this.head = currentHead.previous;
+    currentHead.previous = undefined;
+
+    this.length && this.length--;
+
+    return currentHead.value;
+  }
+}
+```
+
+We can add more methods to the `Stack` class.
