@@ -1,0 +1,15 @@
+---
+title: "SOLVED: 431 Status Code With Request Header Fields Too Large"
+date: 2023-07-08
+slug: solved-431-status-code-with-request-header-fields-too-large
+description: ""
+tags: ["web"]
+---
+
+In my current project, when we moved a page to different architecture, we are seeing status code 431 sometimes from Cloudflare. HTTP status code 431 from Cloudflare means, **the header size is too large**.
+
+The response header size of a page can be viewed under **Response Headers** of a page in browser.
+
+## What could be the cause?
+
+From a quick analysis, it looks like this is happening as the cookie size is increasing over time.
