@@ -8,7 +8,7 @@ tags: ["web"]
 
 import Olink from "../../../../src/components/olink";
 import Image from "../../../../src/components/image";
-import imgFunction from "./images/aws-request-header-limit.png";
+import imgAWS from "./images/aws-request-header-limit.png";
 
 In my current project, when we moved a page to different architecture, we were seeing status code 431 sometimes from Cloudflare.
 
@@ -24,7 +24,7 @@ In my case, we were using Cloudflare for a long time. So Cloudflare is not the p
 
 An AWS API gateway has a hard limit for request header size of **10kb**. You can read more <Olink link="https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html">here</Olink>.
 
-<Image src={imgFunction} alt="API Gateway limit" />
+<Image src={imgAWS} alt="API Gateway limit" />
 
 ## How to fix it
 
