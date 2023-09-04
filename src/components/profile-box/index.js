@@ -18,7 +18,7 @@ export default function () {
           Joby Joseph
         </a>
       </div>
-      <div className={styles.role}>Web Developer</div>
+      <div className={styles.role}>Web Architect</div>
     </div>
   );
 }

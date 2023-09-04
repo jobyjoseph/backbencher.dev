@@ -106,7 +106,23 @@ table {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  max-width: 680px;
+  max-width: 1100px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 15px;
+    flex-direction: row;
+  }
+}
+
+.sidebar {
+  flex: 1 1 100%;
+  padding: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+    flex: 0 0 300px;
+    padding: 0;
+  }
 }
 
 .contentArea {

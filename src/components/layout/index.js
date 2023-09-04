@@ -10,6 +10,8 @@ import PropTypes from "prop-types";
 import Header from "../header";
 import Footer from "../footer";
 import SEO from "../seo";
+import ProfileBox from "../profile-box";
+import GoogleAd from "../googlead";
 import * as styles from "./layout.module.scss";
 import topics from "../../config/topics";
 
@@ -23,6 +25,25 @@ const Layout = ({ children, title, description, topic, headings, slug }) => {
       <div className={styles.container}>
         <div className={styles.main}>
           <div className={styles.mainContent}>{children}</div>
+        </div>
+        <div className={styles.rightSidebar}>
+          <ProfileBox />
+          <div className={styles.adContainer}>
+            <GoogleAd
+              style={{ display: "block" }}
+              format="auto"
+              slot="6627637198"
+              responsive="true"
+            />
+          </div>
+          <div className={styles.adContainer}>
+            <GoogleAd
+              style={{ display: "block" }}
+              format="auto"
+              slot="4442358683"
+              responsive="true"
+            />
+          </div>
         </div>
       </div>
 
