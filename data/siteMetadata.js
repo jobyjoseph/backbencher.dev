@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Litmus7.dev',
-  author: 'L7 developers',
-  headerTitle: 'Litmus7.dev',
+  title: 'Backbencher.dev',
+  author: 'Joby Joseph',
+  headerTitle: 'Backbencher.dev',
   description: 'A blog about software development, technology, and life.',
   language: 'en-us',
   theme: 'system', // system, dark or light
