@@ -1,0 +1,1 @@
+Thank you [@timlrx](https://github.com/timlrx/tailwind-nextjs-starter-blog) for this Next.js blog starter.
